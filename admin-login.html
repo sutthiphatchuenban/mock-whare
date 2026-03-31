@@ -6,8 +6,7 @@
 <title>Whare Admin | Secure Login</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -73,9 +72,7 @@
       }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
+
         .bg-stone-auth {
             background: radial-gradient(circle at top right, #303030 0%, #1b1c1c 100%);
         }
@@ -100,12 +97,12 @@
 <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
 <!-- Header / Top Bar -->
 <header class="fixed top-0 left-0 w-full px-8 h-20 flex items-center justify-between z-50">
-<a class="flex items-center space-x-3 text-surface-container-lowest hover:opacity-80 transition-opacity" href="somsri-home.html">
-<span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
-<span class="font-label text-xs uppercase tracking-[0.2em]">Back to site</span>
+<a class="flex items-center space-x-3 text-surface-container-lowest hover:opacity-80 transition-opacity" href="index.html">
+<i data-lucide="arrow-left" class="w-5 h-5"></i>
+<span class="font-label text-xs uppercase tracking-[0.2em]">Back to Hub</span>
 </a>
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary text-2xl" data-icon="shield">shield</span>
+<i data-lucide="shield" class="w-6 h-6 text-secondary"></i>
 <h1 class="font-headline text-lg font-semibold tracking-tight text-surface-container-lowest">Whare System Admin</h1>
 </div>
 <div class="w-24"></div> <!-- Spacer for symmetry -->
@@ -124,7 +121,7 @@
 <label class="block font-label text-[10px] font-bold uppercase tracking-widest text-outline-variant opacity-70" for="admin-user">Admin Username</label>
 <div class="relative">
 <input class="w-full bg-stone-900/50 border-0 border-b border-stone-700/50 text-surface-container-lowest py-3 focus:ring-0 focus:border-secondary transition-all outline-none" id="admin-user" name="username" placeholder="username" type="text" required value="admin"/>
-<span class="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 text-stone-600 text-lg" data-icon="person">person</span>
+<i data-lucide="user" class="w-5 h-5 absolute right-0 top-1/2 -translate-y-1/2 text-stone-600"></i>
 </div>
 </div>
 <!-- Admin Password -->
@@ -133,7 +130,7 @@
 <div class="relative">
 <input class="w-full bg-stone-900/50 border-0 border-b border-stone-700/50 text-surface-container-lowest py-3 focus:ring-0 focus:border-secondary transition-all outline-none" id="admin-pass" name="password" placeholder="••••••••" type="password" required value="password"/>
 <button class="absolute right-0 top-1/2 -translate-y-1/2 text-stone-600 hover:text-secondary transition-colors" type="button" onclick="togglePassword()">
-<span class="material-symbols-outlined text-lg" id="pass-icon">visibility</span>
+<i data-lucide="eye" id="pass-icon" class="w-5 h-5"></i>
 </button>
 </div>
 </div>
@@ -142,7 +139,7 @@
 <label class="flex items-center gap-3 cursor-pointer group">
 <div class="relative flex items-center">
 <input class="peer h-4 w-4 rounded-sm border-stone-700 bg-stone-900/50 checked:bg-secondary checked:border-secondary focus:ring-offset-stone-900 focus:ring-secondary/20 transition-all appearance-none border" type="checkbox" checked/>
-<span class="material-symbols-outlined absolute inset-0 text-[12px] text-white opacity-0 peer-checked:opacity-100 flex items-center justify-center font-bold" data-icon="check">check</span>
+<i data-lucide="check" class="absolute inset-0 text-[12px] text-white opacity-0 peer-checked:opacity-100 flex items-center justify-center font-bold w-4 h-4"></i>
 </div>
 <span class="text-xs text-stone-400 group-hover:text-surface-dim transition-colors">Remember me</span>
 </label>
@@ -203,5 +200,8 @@
         }, 1200);
         return false;
     }
+</script>
+<script>
+    lucide.createIcons();
 </script>
 </body></html>
