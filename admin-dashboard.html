@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Whare Admin Dashboard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdbd1",
+              "on-secondary-container": "#7a3c46",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#eebbac",
+              "on-secondary-fixed": "#3a0915",
+              "error-container": "#ffdad6",
+              "surface-dim": "#dcd9d9",
+              "secondary-container": "#feaab6",
+              "on-tertiary-fixed-variant": "#474744",
+              "surface-container-high": "#eae8e7",
+              "primary-container": "#e3b1a2",
+              "outline": "#837470",
+              "on-primary-fixed": "#2f140b",
+              "tertiary": "#5f5e5b",
+              "on-tertiary-fixed": "#1c1c1a",
+              "inverse-on-surface": "#f3f0f0",
+              "surface-bright": "#fbf9f8",
+              "on-error": "#ffffff",
+              "primary": "#7c5549",
+              "surface-container-highest": "#e4e2e1",
+              "on-surface-variant": "#514441",
+              "on-surface": "#1b1c1c",
+              "on-background": "#1b1c1c",
+              "surface-variant": "#e4e2e1",
+              "surface-tint": "#7c5549",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#bebcb8",
+              "background": "#fbf9f8",
+              "surface-container-low": "#f6f3f2",
+              "inverse-primary": "#eebbac",
+              "surface-container": "#f0eded",
+              "outline-variant": "#d5c2be",
+              "on-tertiary-container": "#4c4c49",
+              "error": "#ba1a1a",
+              "secondary": "#8c4b55",
+              "on-primary-fixed-variant": "#623e33",
+              "tertiary-fixed": "#e5e2de",
+              "on-error-container": "#93000a",
+              "surface": "#fbf9f8",
+              "inverse-surface": "#303030",
+              "secondary-fixed": "#ffd9dd",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-secondary-fixed-variant": "#70343e",
+              "on-primary-container": "#674238"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body { font-family: 'Manrope', sans-serif; }
+      h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-[#fbf9f8] dark:bg-stone-950 shadow-sm dark:shadow-none z-40">
+<div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='admin-dashboard.html'">
+<span class="material-symbols-outlined text-[#7c5549] dark:text-[#E5B0A3]" data-icon="shield">shield</span>
+<span class="text-xl font-serif tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Whare Admin</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-6">
+<a class="text-[#7c5549] dark:text-[#E5B0A3] font-bold text-sm" href="admin-dashboard.html">Dashboard</a>
+<a class="text-stone-500 dark:text-stone-400 hover:bg-[#f6f3f2] dark:hover:bg-stone-800 transition-colors px-2 rounded text-sm font-medium" href="admin-manage-withdrawals.html">Withdrawals</a>
+<a class="text-stone-500 dark:text-stone-400 hover:bg-[#f6f3f2] dark:hover:bg-stone-800 transition-colors px-2 rounded text-sm font-medium" href="admin-manage-users.html">Users</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30 cursor-pointer hover:ring-2 ring-primary transition-all">
+<img alt="Admin Profile" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+</div>
+</header>
+<!-- NavigationDrawer (Sidebar for Web) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 p-4 flex flex-col gap-2 bg-[#f6f3f2] dark:bg-stone-900 border-r border-stone-200/20 hidden md:flex">
+<p class="text-xs tracking-wider uppercase font-medium text-stone-400 px-4 mt-4 mb-2">Management</p>
+<a class="flex items-center space-x-3 bg-white dark:bg-stone-800 text-[#7c5549] dark:text-[#E5B0A3] rounded-lg px-4 py-3 shadow-sm hover:translate-x-1 transition-transform duration-200" href="admin-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-xs tracking-wider uppercase font-medium">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="admin-refund-deposit.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-xs tracking-wider uppercase font-medium">Deposits</span>
+</a>
+<a class="flex items-center space-x-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="admin-manage-promotions.html">
+<span class="material-symbols-outlined" data-icon="sell">sell</span>
+<span class="text-xs tracking-wider uppercase font-medium">Promotions</span>
+</a>
+<a class="flex items-center space-x-3 text-stone-500 dark:text-stone-400 px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="admin-manage-shops.html">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="text-xs tracking-wider uppercase font-medium">Shops</span>
+</a>
+<div class="mt-auto pb-4">
+<a class="flex items-center space-x-3 text-error/70 px-4 py-3 hover:bg-error/5 rounded-lg transition-colors" href="admin-login.html">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-xs tracking-wider uppercase font-medium">Logout System</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-24 pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Metrics Section -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_20px_40px_rgba(124,85,73,0.04)] border-b-2 border-primary/10 cursor-pointer hover:scale-[1.02] transition-transform" onclick="window.location.href='admin-manage-users.html'">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 mb-2">Total Users</p>
+<h3 class="text-3xl font-semibold text-primary">12,450</h3>
+<div class="mt-4 flex items-center text-xs text-secondary font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+<span>+5.2%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_20px_40px_rgba(124,85,73,0.04)] border-b-2 border-primary/10 cursor-pointer hover:scale-[1.02] transition-transform" onclick="window.location.href='admin-manage-shops.html'">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 mb-2">Boutiques</p>
+<h3 class="text-3xl font-semibold text-primary">342</h3>
+<div class="mt-4 flex items-center text-xs text-secondary font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+<span>+12 today</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_20px_40px_rgba(124,85,73,0.04)] border-b-2 border-primary/10 cursor-pointer hover:scale-[1.02] transition-transform">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 mb-2">Products</p>
+<h3 class="text-3xl font-semibold text-primary">15,820</h3>
+<div class="mt-4 flex items-center text-xs text-stone-400 font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="horizontal_rule">horizontal_rule</span>
+<span>Stable</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_20px_40px_rgba(124,85,73,0.04)] border-b-2 border-primary/10 cursor-pointer hover:scale-[1.02] transition-transform">
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant/70 mb-2">Orders Today</p>
+<h3 class="text-3xl font-semibold text-primary">89</h3>
+<div class="mt-4 flex items-center text-xs text-secondary font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+<span>+24% vs yesterday</span>
+</div>
+</div>
+</section>
+<!-- Revenue & Management Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<!-- Revenue Chart Area -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-2xl p-8 relative overflow-hidden">
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<h2 class="text-2xl font-semibold text-on-surface mb-1">Total Revenue</h2>
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-bold text-primary" id="revenue-amount">฿142,890.00</span>
+<span class="text-secondary font-bold text-sm" id="revenue-diff">+12%</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-1 rounded-full flex gap-1">
+<button onclick="toggleChart(this, 'day')" id="day-btn" class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white shadow-sm text-primary transition-all">Day</button>
+<button onclick="toggleChart(this, 'month')" id="month-btn" class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:bg-white/50 transition-all">Month</button>
+</div>
+</div>
+<!-- Abstract Representation of a Line Chart -->
+<div class="h-64 flex items-end gap-2 px-2 relative">
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path id="chart-path-bg" d="M0,80 Q25,70 40,85 T70,50 T100,20 L100,100 L0,100 Z" fill="url(#grad1)" opacity="0.15" class="transition-all duration-700"></path>
+<path id="chart-path" d="M0,80 Q25,70 40,85 T70,50 T100,20" fill="none" stroke="#7c5549" stroke-width="2" vector-effect="non-scaling-stroke" class="transition-all duration-700"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#7c5549;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#7c5549;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex-1 flex justify-between text-[10px] uppercase tracking-widest text-on-surface-variant mt-4 absolute bottom-[-24px] w-full px-2" id="chart-labels">
+<span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>00:00</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-[0_20px_40px_rgba(124,85,73,0.06)]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-semibold">Recent Activity</h3>
+<button class="text-[10px] uppercase font-bold text-secondary hover:underline">View All</button>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4 cursor-pointer hover:bg-surface-container-low p-2 rounded-lg transition-colors" onclick="window.location.href='admin-manage-shops.html'">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-xl" data-icon="store">store</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">New boutique registered</p>
+<p class="text-xs text-on-surface-variant">L'Artisan Paris applied for a seller account.</p>
+<p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-tighter">3m ago</p>
+</div>
+</div>
+<div class="flex gap-4 cursor-pointer hover:bg-surface-container-low p-2 rounded-lg transition-colors" onclick="window.location.href='admin-manage-withdrawals.html'">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Withdrawal request</p>
+<p class="text-xs text-on-surface-variant">Merchant #402 requested ฿45,000.00.</p>
+<p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-tighter">15m ago</p>
+</div>
+</div>
+<div class="flex gap-4 cursor-pointer hover:bg-surface-container-low p-2 rounded-lg transition-colors">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-error-container text-xl" data-icon="bug_report">bug_report</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Bug report</p>
+<p class="text-xs text-on-surface-variant">Mobile checkout failing for Android users.</p>
+<p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-tighter">1h ago</p>
+</div>
+</div>
+<div class="flex gap-4 cursor-pointer hover:bg-surface-container-low p-2 rounded-lg transition-colors" onclick="window.location.href='admin-manage-promotions.html'">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-container text-xl" data-icon="campaign">campaign</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">New promo created</p>
+<p class="text-xs text-on-surface-variant">Summer Solstice flash sale launched.</p>
+<p class="text-[10px] text-stone-400 mt-1 uppercase font-bold tracking-tighter">2h ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Management Bento Grid -->
+<h2 class="text-2xl font-semibold mb-6">Management Portal</h2>
+<section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<a class="group flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-2xl hover:bg-primary transition-all duration-300" href="admin-manage-shops.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-3 text-3xl" data-icon="storefront">storefront</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white/80 text-center">Boutiques</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-2xl hover:bg-primary transition-all duration-300" href="admin-manage-users.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-3 text-3xl" data-icon="group">group</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white/80 text-center">Users</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-2xl hover:bg-primary transition-all duration-300" href="admin-manage-promotions.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-3 text-3xl" data-icon="loyalty">loyalty</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white/80 text-center">Promotions</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-2xl hover:bg-primary transition-all duration-300" href="admin-manage-withdrawals.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-3 text-3xl" data-icon="payments">payments</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white/80 text-center">Withdrawals</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-2xl hover:bg-primary transition-all duration-300" href="admin-refund-deposit.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-3 text-3xl" data-icon="verified_user">verified_user</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white/80 text-center">Deposits</span>
+</a>
+<a class="group flex flex-col items-center justify-center p-6 bg-surface-container-low rounded-2xl hover:bg-primary transition-all duration-300" href="admin-login.html">
+<span class="material-symbols-outlined text-primary group-hover:text-white mb-3 text-3xl" data-icon="logout">logout</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-white/80 text-center">Logout</span>
+</a>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-[#fbf9f8]/80 dark:bg-stone-950/80 backdrop-blur-xl rounded-t-2xl shadow-[0_-4px_20px_rgba(124,85,73,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#7c5549]/10 rounded-xl px-3 py-1" href="admin-dashboard.html">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Metrics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors" href="admin-refund-deposit.html">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Refunds</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors" href="admin-manage-promotions.html">
+<span class="material-symbols-outlined" data-icon="loyalty">loyalty</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Promos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors" href="admin-manage-users.html">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Admin</span>
+</a>
+</nav>
+<script>
+    function toggleChart(btn, mode) {
+        // Update buttons
+        document.querySelectorAll('[onclick^="toggleChart"]').forEach(b => {
+            b.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+            b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-white', 'shadow-sm', 'text-primary');
+        btn.classList.remove('text-on-surface-variant');
+
+        // Update content
+        const amount = document.getElementById('revenue-amount');
+        const diff = document.getElementById('revenue-diff');
+        const path = document.getElementById('chart-path');
+        const pathBg = document.getElementById('chart-path-bg');
+        const labels = document.getElementById('chart-labels');
+
+        if (mode === 'month') {
+            amount.textContent = '฿3,842,910.00';
+            diff.textContent = '+24%';
+            path.setAttribute('d', 'M0,90 Q20,60 40,40 T60,30 T80,50 T100,10');
+            pathBg.setAttribute('d', 'M0,90 Q20,60 40,40 T60,30 T80,50 T100,10 L100,100 L0,100 Z');
+            labels.innerHTML = '<span>JAN</span><span>MAR</span><span>JUL</span><span>SEP</span><span>DEC</span>';
+        } else {
+            amount.textContent = '฿142,890.00';
+            diff.textContent = '+12%';
+            path.setAttribute('d', 'M0,80 Q25,70 40,85 T70,50 T100,20');
+            pathBg.setAttribute('d', 'M0,80 Q25,70 40,85 T70,50 T100,20 L100,100 L0,100 Z');
+            labels.innerHTML = '<span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>00:00</span>';
+        }
+    }
+</script>
+</body></html>

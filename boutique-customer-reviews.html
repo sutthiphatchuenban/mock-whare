@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#8c4b55",
+              "primary-fixed-dim": "#eebbac",
+              "on-secondary-fixed": "#3a0915",
+              "surface-container-low": "#f6f3f2",
+              "on-tertiary-fixed-variant": "#474744",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "on-primary-fixed-variant": "#623e33",
+              "on-primary-container": "#674238",
+              "on-background": "#1b1c1c",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e4e2e1",
+              "surface-tint": "#7c5549",
+              "outline": "#837470",
+              "on-primary-fixed": "#2f140b",
+              "surface-dim": "#dcd9d9",
+              "on-surface": "#1b1c1c",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "background": "#fbf9f8",
+              "surface-bright": "#fbf9f8",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e4e2e1",
+              "on-error": "#ffffff",
+              "primary": "#7c5549",
+              "on-secondary-container": "#7a3c46",
+              "tertiary-fixed": "#e5e2de",
+              "tertiary-container": "#bebcb8",
+              "secondary-container": "#feaab6",
+              "on-surface-variant": "#514441",
+              "primary-container": "#e3b1a2",
+              "inverse-on-surface": "#f3f0f0",
+              "inverse-primary": "#eebbac",
+              "surface": "#fbf9f8",
+              "surface-container-high": "#eae8e7",
+              "outline-variant": "#d5c2be",
+              "primary-fixed": "#ffdbd1",
+              "inverse-surface": "#303030",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#ffd9dd",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#f0eded",
+              "on-secondary-fixed-variant": "#70343e",
+              "on-tertiary-fixed": "#1c1c1a",
+              "tertiary": "#5f5e5b",
+              "on-tertiary-container": "#4c4c49"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif-headline {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f8] dark:bg-stone-950 transition-colors">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity" onclick="window.location.href='boutique-dashboard.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Noto_Serif'] font-medium tracking-tight text-xl text-[#1b1c1c] dark:text-stone-100">รีวิวจากลูกค้า</h1>
+</div>
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-6 pt-8 space-y-12">
+<!-- Summary Card: Tonal Depth Layering -->
+<section class="relative">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_20px_40px_rgba(124,85,73,0.05)] text-center border border-primary/5">
+<div class="space-y-2">
+<span class="text-6xl font-headline font-bold text-primary">4.8</span>
+<div class="flex justify-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star_half" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<p class="font-label text-on-surface-variant text-sm tracking-wide uppercase">from 256 reviews</p>
+</div>
+<!-- Subtle Rating Breakdown -->
+<div class="mt-8 space-y-3 max-w-xs mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xs font-semibold w-4">5</span>
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs font-semibold w-4">4</span>
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[10%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant/40">
+<span class="text-xs font-semibold w-4">3</span>
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary/20 h-full w-[3%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Accent -->
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-secondary-container/10 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- Review List: Editorial Layout -->
+<section class="space-y-12" id="review-list">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
+<h2 class="font-headline text-2xl font-semibold">Latest Reviews</h2>
+<button class="text-primary font-label text-sm font-bold flex items-center gap-2" onclick="sortReviews()">
+                    Sort by Latest
+                    <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Review Item 1 -->
+<article class="review-item space-y-4 group">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo2B16Fvjuozg7Kp_06flrLv4gVEB2C_r0KU4Z5wVvV7ZoX7hCpcOTV3gF-UgUjdadGIeI4FNljycYI8BHBsuYiv0SrHAWw7yX1bJL5pvOkFaaihcmJmkB6EgqBan3siKpd4NVnu_wqLNHn-lpdbI9JbW0Oc144PhoUU0f0getfN3LhBMHVb566VvoDh08RHJDe71keQ9uPqOux5ivCc6cP9j0YNe6xPCNdPjcgbgbCteOg4gYl-eRfzbq0iQwtv-qFassNnN-som2"/>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">คุณแพรวา มณีรัตน์</h3>
+<div class="flex text-secondary scale-75 -ml-3">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<time class="text-xs text-on-surface-variant/60 font-medium">2 days ago</time>
+</div>
+<div class="pl-16 space-y-3">
+<p class="text-on-surface-variant leading-relaxed">
+                        เนื้อผ้าดีมากค่ะ นุ่มและใส่สบายมาก ทรงสวยเหมือนในรูปเลย การตัดเย็บเนี๊ยบมาก สมกับที่เป็นแบรนด์นี้จริงๆ ค่ะ ประทับใจมาก
+                    </p>
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-xs font-bold text-on-surface-variant">สินค้า: Soft Girl Campus Outfit - Pink</span>
+</div>
+</div>
+</article>
+<!-- Review Item 2 -->
+<article class="review-item space-y-4">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2nSKLR4M4KY5Q3RGLhcvQWQMdGWk0jtSLc8nYOUC2ND7zHEpX2TBOhauKmkH76O2ochkkWF3Ktzg9fTeHBlm_mRVMu6C_3lDJcc_ae7uFmJqypljPbl--ReoQowj7aK3x_dcHyUU0a5aqcSvgtmV5n0K8p9ZHu5r14LyRJSTXwBgHP6Jv6nP7XEQeiqQwEeJJoOe01DtjLWHu82jpM-9CCFgapiAoNz5qwX7MeJSaSH2u5IN_anNCgS4rLi7tBUtP_beutdfRXUju"/>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">คุณธนพล วงศ์สวัสดิ์</h3>
+<div class="flex text-secondary scale-75 -ml-3">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</div>
+</div>
+</div>
+<time class="text-xs text-on-surface-variant/60 font-medium">5 days ago</time>
+</div>
+<div class="pl-16 space-y-3">
+<p class="text-on-surface-variant leading-relaxed">
+                        ส่งไวมากครับ แพ็คเกจจิ้งสวยงามหรูหรามาก ตัวสินค้าคุณภาพดีตามราคาครับ อาจจะไซส์เล็กกว่าปกตินิดหน่อย แต่โดยรวมโอเคเลย
+                    </p>
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-xs font-bold text-on-surface-variant">สินค้า: Teen Elephant Chill Pants Set</span>
+</div>
+</div>
+</article>
+<!-- Review Item 3 -->
+<article class="review-item space-y-4">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZfU96WPrba4B2BwrAaMQ4SBtNf1C1uM-d2N7o4Uzv-VzSLrdGLfdMMSS0AGxRtd0OvE9DUSOhU9-i9oEqdzdjAI4qYpfiwUWbNljBdz5g-CzrniZqf2jCqUs2wuwzl907epa6SYPvCFgO_KdCspTBaTW7rP0ePM4BXEkhimWl0qKUz8EPIsxw6RRwVDpirPUo84l65lVvm3udznkLdxvwgeD_Fkzh7z-X5trxjHHKmrlMm0YzctszBIimokdNZMim1Tv7rs_gksk"/>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface">คุณกมลวรรณ ชัยเจริญ</h3>
+<div class="flex text-secondary scale-75 -ml-3">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<time class="text-xs text-on-surface-variant/60 font-medium">1 week ago</time>
+</div>
+<div class="pl-16 space-y-4">
+<p class="text-on-surface-variant leading-relaxed">
+                        ได้รับของแล้วค่ะ สีสวยถูกใจมาก ตรงปกที่สุด แพ็คมาอย่างดีมีถุงผ้าแถมมาด้วย คุ้มค่าแก่การรอคอยค่ะ
+                    </p>
+<div class="flex gap-2 overflow-hidden rounded-lg">
+<img alt="Review Image" class="w-32 h-32 object-cover rounded-lg" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+<img alt="Review Image" class="w-32 h-32 object-cover rounded-lg" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+</div>
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-xs font-bold text-on-surface-variant">สินค้า: Unisex Street Hoodie Set</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Load More CTA -->
+<div class="flex justify-center pt-8">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-full font-label text-sm font-bold tracking-widest uppercase hover:opacity-90 transition-opacity shadow-lg shadow-primary/20 active:scale-95 duration-200">
+                ดูรีวิวเพิ่มเติม
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl shadow-[0_-10px_40px_rgba(124,85,73,0.05)] border-t border-[#7c5549]/10">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-110 transition-transform active:scale-90 transition-all duration-300" href="boutique-customer-reviews.html">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Reviews</span>
+</a>
+</nav>
+<script>
+    function sortReviews() {
+        const list = document.getElementById('review-list');
+        const items = Array.from(list.querySelectorAll('.review-item'));
+        items.reverse().forEach(item => list.appendChild(item));
+        alert('Reviews sorted!');
+    }
+</script>
+</body></html>

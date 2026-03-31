@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Whare Manager - Boutique Products</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, .serif-font {
+            font-family: 'Noto Serif', serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#837470",
+              "tertiary": "#5f5e5b",
+              "surface-variant": "#e4e2e1",
+              "on-primary-container": "#674238",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-fixed-variant": "#474744",
+              "on-tertiary-container": "#4c4c49",
+              "tertiary-fixed": "#e5e2de",
+              "surface-container-highest": "#e4e2e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#514441",
+              "primary-fixed-dim": "#eebbac",
+              "secondary": "#8c4b55",
+              "on-tertiary-fixed": "#1c1c1a",
+              "secondary-fixed": "#ffd9dd",
+              "on-primary-fixed-variant": "#623e33",
+              "secondary-container": "#feaab6",
+              "surface-bright": "#fbf9f8",
+              "on-surface": "#1b1c1c",
+              "inverse-on-surface": "#f3f0f0",
+              "on-secondary-container": "#7a3c46",
+              "primary-container": "#e3b1a2",
+              "inverse-surface": "#303030",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#eebbac",
+              "surface-tint": "#7c5549",
+              "primary": "#7c5549",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-container-high": "#eae8e7",
+              "surface-dim": "#dcd9d9",
+              "on-secondary-fixed-variant": "#70343e",
+              "error-container": "#ffdad6",
+              "background": "#fbf9f8",
+              "on-primary-fixed": "#2f140b",
+              "surface-container": "#f0eded",
+              "tertiary-container": "#bebcb8",
+              "outline-variant": "#d5c2be",
+              "on-secondary-fixed": "#3a0915",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fbf9f8",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<a href="boutique-dashboard.html" class="flex items-center">
+<span class="material-symbols-outlined text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity Active: scale-95 duration-200 cursor-pointer">arrow_back</span>
+</a>
+<h1 class="font-serif text-2xl tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Products</h1>
+</div>
+<div class="flex items-center gap-4">
+<a href="boutique-notifications.html" class="flex items-center">
+<span class="material-symbols-outlined text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity Active: scale-95 duration-200 cursor-pointer">notifications</span>
+</a>
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-container cursor-pointer" onclick="window.location.href='boutique-profile-settings.html'">
+<img alt="Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG03_PrbeIQ8_5OtIN1WUg4TxjQfR0myGTu49i4AeCyHpK-dpbogCNU6eQmUIigt8s9MiM2IBN4EIwYH-LiXxhymWYuy-aku_XQSKjgS-xJ_7fcykuR0nzqo0EeqGYuTum0Htq1KYzkQ-ei_8WeqtDcJgZSiF7AW-mYX3z0ou3c1zGuiTvztmAqvheYxfeDq-r2IH68DAhjbTNxKGHWQXQn_ArSVcPUUY4RQf5A-LjPqhp8M9qSoQ1Q2JzkHGAJpbIAHOs8uDGalcz"/>
+</div>
+</div>
+</header>
+<main class="px-6 pt-6 pb-32 max-w-5xl mx-auto">
+<!-- Header Actions Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+<div>
+<h2 class="text-4xl font-headline tracking-tight text-on-surface mb-2">Curated Inventory</h2>
+<p class="text-on-surface-variant font-body text-sm tracking-wide">Manage your whare's exclusive collection</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full shadow-[0_10px_20px_rgba(124,85,73,0.15)] hover:opacity-90 transition-all active:scale-95" onclick="alert('Navigate to Add Product page')">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 400;">add</span>
+<span class="font-label text-sm font-semibold tracking-widest uppercase">Add Product</span>
+</button>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-8 mb-10 overflow-x-auto hide-scrollbar border-b border-outline-variant/20 pb-1" id="product-filters">
+<button class="product-tab pb-3 border-b-2 border-primary text-primary font-bold text-sm tracking-widest uppercase transition-all" onclick="filterProducts(this, 'All')">All</button>
+<button class="product-tab pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-medium text-sm tracking-widest uppercase transition-all" onclick="filterProducts(this, 'Available')">Available</button>
+<button class="product-tab pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-medium text-sm tracking-widest uppercase transition-all" onclick="filterProducts(this, 'Booked')">Booked</button>
+<button class="product-tab pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-medium text-sm tracking-widest uppercase transition-all" onclick="filterProducts(this, 'Archived')">Archived</button>
+</div>
+<!-- Bento Grid of Products -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+<!-- Product 1: Unisex Street Hoodie Set -->
+<div class="product-card group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)]" data-status="Available">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Unisex Street Hoodie Set" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">Available</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-on-surface leading-tight">Unisex Street Hoodie</h3>
+<p class="text-xs font-label text-on-surface-variant tracking-wider uppercase mt-1">Size: Free | Black</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-headline text-primary">฿750<span class="text-xs font-body text-on-surface-variant">/day</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded p-3 mb-6 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Insurance Fee</span>
+<span class="text-xs font-bold text-on-surface">฿150.00</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<button class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors" onclick="alert('Edit product')">
+<span class="material-symbols-outlined">edit</span>
+<span class="text-xs font-bold uppercase tracking-widest">Edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="confirmDelete(this)">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2: Teen Elephant Chill Pants Set -->
+<div class="product-card group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)]" data-status="Available">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Teen Elephant Chill Pants Set" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://s.alicdn.com/%40sc04/kf/Hcb809152dc2f4b68b98b683cb5e01d37k/Thailand-Elephant-Pants-Female-Ethnic-Style-Loose-Wide-leg-Beach-Pants-Home-Leisure-High-Waist-Thin-Trend-Five-minute-Shorts.jpg_300x300.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">Available</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-on-surface leading-tight">Elephant Chill Pants</h3>
+<p class="text-xs font-label text-on-surface-variant tracking-wider uppercase mt-1">Size: Free | Blue</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-headline text-primary">฿350<span class="text-xs font-body text-on-surface-variant">/day</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded p-3 mb-6 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Insurance Fee</span>
+<span class="text-xs font-bold text-on-surface">฿50.00</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<button class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors" onclick="alert('Edit product')">
+<span class="material-symbols-outlined">edit</span>
+<span class="text-xs font-bold uppercase tracking-widest">Edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="confirmDelete(this)">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3: Soft Girl Campus Outfit -->
+<div class="product-card group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)]" data-status="Booked">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Soft Girl Campus Outfit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-on-secondary-container">Booked</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-on-surface leading-tight">Campus Soft Outfit</h3>
+<p class="text-xs font-label text-on-surface-variant tracking-wider uppercase mt-1">Size: S/M | White/Blue</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-headline text-primary">฿550<span class="text-xs font-body text-on-surface-variant">/day</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded p-3 mb-6 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Insurance Fee</span>
+<span class="text-xs font-bold text-on-surface">฿100.00</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<button class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors" onclick="alert('Edit product')">
+<span class="material-symbols-outlined">edit</span>
+<span class="text-xs font-bold uppercase tracking-widest">Edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="confirmDelete(this)">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4: Y2K Baby Crop Jeans Set -->
+<div class="product-card group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)]" data-status="Available">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Y2K Baby Crop Jeans Set" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">Available</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-on-surface leading-tight">Y2K Baby Crop Jeans</h3>
+<p class="text-xs font-label text-on-surface-variant tracking-wider uppercase mt-1">Size: M | Denim</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-headline text-primary">฿650<span class="text-xs font-body text-on-surface-variant">/day</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded p-3 mb-6 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Insurance Fee</span>
+<span class="text-xs font-bold text-on-surface">฿120.00</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<button class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors" onclick="alert('Edit product')">
+<span class="material-symbols-outlined">edit</span>
+<span class="text-xs font-bold uppercase tracking-widest">Edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="confirmDelete(this)">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 5: Thai Traditional Modern -->
+<div class="product-card group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)]" data-status="Available">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Thai Traditional Modern" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-primary">Available</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-headline text-on-surface leading-tight">Traditional Modern</h3>
+<p class="text-xs font-label text-on-surface-variant tracking-wider uppercase mt-1">Size: Free | Gold/White</p>
+</div>
+<div class="text-right">
+<p class="text-lg font-headline text-primary">฿1,500<span class="text-xs font-body text-on-surface-variant">/day</span></p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded p-3 mb-6 flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">Insurance Fee</span>
+<span class="text-xs font-bold text-on-surface">฿300.00</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/10 pt-4">
+<button class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors" onclick="alert('Edit product')">
+<span class="material-symbols-outlined">edit</span>
+<span class="text-xs font-bold uppercase tracking-widest">Edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors" onclick="confirmDelete(this)">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#ffffff]/50 dark:bg-stone-800/50 rounded-xl px-3 py-1 scale-105 transition-all" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-customer-inquiries.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
+</a>
+</nav>
+<script>
+    function filterProducts(tab, status) {
+        document.querySelectorAll('.product-tab').forEach(t => {
+            t.classList.remove('border-primary', 'text-primary', 'font-bold');
+            t.classList.add('border-transparent', 'text-on-surface-variant', 'font-medium');
+        });
+        tab.classList.remove('border-transparent', 'text-on-surface-variant', 'font-medium');
+        tab.classList.add('border-primary', 'text-primary', 'font-bold');
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            if (status === 'All' || card.dataset.status === status) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function confirmDelete(btn) {
+        if (confirm('Are you sure you want to delete this product?')) {
+            btn.closest('.product-card').remove();
+            alert('Product removed from inventory.');
+        }
+    }
+</script>
+</body></html>
+</body></html>

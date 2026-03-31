@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#837470",
+              "tertiary": "#5f5e5b",
+              "surface-variant": "#e4e2e1",
+              "on-primary-container": "#674238",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-fixed-variant": "#474744",
+              "on-tertiary-container": "#4c4c49",
+              "tertiary-fixed": "#e5e2de",
+              "surface-container-highest": "#e4e2e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#514441",
+              "primary-fixed-dim": "#eebbac",
+              "secondary": "#8c4b55",
+              "on-tertiary-fixed": "#1c1c1a",
+              "secondary-fixed": "#ffd9dd",
+              "on-primary-fixed-variant": "#623e33",
+              "secondary-container": "#feaab6",
+              "surface-bright": "#fbf9f8",
+              "on-surface": "#1b1c1c",
+              "inverse-on-surface": "#f3f0f0",
+              "on-secondary-container": "#7a3c46",
+              "primary-container": "#e3b1a2",
+              "inverse-surface": "#303030",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#eebbac",
+              "surface-tint": "#7c5549",
+              "primary": "#7c5549",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-container-high": "#eae8e7",
+              "surface-dim": "#dcd9d9",
+              "on-secondary-fixed-variant": "#70343e",
+              "error-container": "#ffdad6",
+              "background": "#fbf9f8",
+              "on-primary-fixed": "#2f140b",
+              "surface-container": "#f0eded",
+              "tertiary-container": "#bebcb8",
+              "outline-variant": "#d5c2be",
+              "on-secondary-fixed": "#3a0915",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fbf9f8",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity active:scale-95 duration-200" onclick="window.location.href='boutique-dashboard.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-serif text-2xl tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Notifications</h1>
+</div>
+<button class="font-sans text-[10px] uppercase tracking-widest text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity" onclick="clearAllNotifications()">
+            Clear All
+        </button>
+</header>
+<main class="max-w-2xl mx-auto px-6 py-12" id="notification-container">
+<!-- Today -->
+<div class="notification-group mb-12">
+<div class="mb-8">
+<span class="text-[10px] uppercase tracking-[0.2em] text-outline font-bold">Today</span>
+</div>
+<div class="space-y-6">
+<!-- Notification Item: New Order -->
+<div class="notification-item group relative flex items-start gap-5 p-6 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low cursor-pointer" onclick="window.location.href='boutique-manage-orders.html'">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-headline leading-tight">New Order Received</h3>
+<span class="text-xs text-outline font-medium">2 mins ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">A new order #8241 has been placed for the Thai Traditional Modern.</p>
+</div>
+<!-- Unread Indicator -->
+<div class="unread-dot w-2 h-2 mt-2 rounded-full bg-secondary"></div>
+</div>
+<!-- Notification Item: Customer Return -->
+<div class="notification-item group relative flex items-start gap-5 p-6 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low cursor-pointer" onclick="window.location.href='boutique-manage-returns.html'">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="auto_renew">autorenew</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-headline leading-tight">Customer Return Request</h3>
+<span class="text-xs text-outline font-medium">45 mins ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Arisa W. requested a return for 'Y2K Baby Crop Jeans Set' due to sizing.</p>
+</div>
+<div class="unread-dot w-2 h-2 mt-2 rounded-full bg-secondary"></div>
+</div>
+<!-- Notification Item: New Review -->
+<div class="notification-item group relative flex items-start gap-5 p-6 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low cursor-pointer" onclick="window.location.href='boutique-customer-reviews.html'">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-headline leading-tight">New Boutique Review</h3>
+<span class="text-xs text-outline font-medium">2 hours ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">"The Elephant Chill Pants are so comfortable." - A 5-star review from Julianne S.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Yesterday -->
+<div class="notification-group">
+<div class="mb-8">
+<span class="text-[10px] uppercase tracking-[0.2em] text-outline font-bold">Yesterday</span>
+</div>
+<div class="space-y-6">
+<!-- Notification Item: New Message -->
+<div class="notification-item group relative flex items-start gap-5 p-6 rounded-xl bg-surface-container-lowest transition-all hover:bg-surface-container-low cursor-pointer" onclick="window.location.href='boutique-chat-detail.html'">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-headline leading-tight">New Message</h3>
+<span class="text-xs text-outline font-medium">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Inquiry regarding bespoke sizing for the Whare Collection.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State -->
+<div class="mt-24 text-center" id="empty-state">
+<div class="w-1 bg-primary/20 h-16 mx-auto mb-6"></div>
+<p class="font-headline italic text-on-surface-variant">End of notifications</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-110 transition-transform active:scale-90 duration-300" href="boutique-profile-settings.html">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Account</span>
+</a>
+</nav>
+<script>
+    function clearAllNotifications() {
+        if (confirm('Are you sure you want to clear all notifications?')) {
+            document.querySelectorAll('.notification-group').forEach(group => group.remove());
+            document.getElementById('empty-state').innerHTML = `
+                <div class="mt-24 text-center">
+                    <span class="material-symbols-outlined text-4xl text-outline/30 mb-4">notifications_off</span>
+                    <p class="font-headline italic text-on-surface-variant">All caught up!</p>
+                </div>
+            `;
+        }
+    }
+</script>
+</body></html>
+</body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Whare Admin - Manage Shops</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#fbf9f8",
+              "secondary-container": "#feaab6",
+              "secondary": "#8c4b55",
+              "on-tertiary-container": "#4c4c49",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-surface": "#1b1c1c",
+              "background": "#fbf9f8",
+              "on-primary-container": "#674238",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#1c1c1a",
+              "secondary-fixed": "#ffd9dd",
+              "primary": "#7c5549",
+              "primary-fixed-dim": "#eebbac",
+              "on-tertiary-fixed-variant": "#474744",
+              "surface-container-low": "#f6f3f2",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "outline": "#837470",
+              "surface-container-highest": "#e4e2e1",
+              "primary-container": "#e3b1a2",
+              "on-error-container": "#93000a",
+              "tertiary": "#5f5e5b",
+              "surface-variant": "#e4e2e1",
+              "on-primary-fixed": "#2f140b",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#623e33",
+              "on-surface-variant": "#514441",
+              "inverse-on-surface": "#f3f0f0",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#e5e2de",
+              "surface-container": "#f0eded",
+              "on-background": "#1b1c1c",
+              "inverse-primary": "#eebbac",
+              "primary-fixed": "#ffdbd1",
+              "tertiary-container": "#bebcb8",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#fbf9f8",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#303030",
+              "surface-dim": "#dcd9d9",
+              "outline-variant": "#d5c2be",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#7c5549",
+              "on-secondary-container": "#7a3c46",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#eae8e7",
+              "on-secondary-fixed-variant": "#70343e",
+              "on-secondary-fixed": "#3a0915"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-[#fbf9f8] dark:bg-stone-950 flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#f6f3f2] dark:hover:bg-stone-800 transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-[#7c5549] dark:text-[#E5B0A3]">arrow_back</span>
+</button>
+<h1 class="text-xl font-serif tracking-tight text-[#1b1c1c] dark:text-stone-100 italic">Manage Shops</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#7c5549] dark:text-[#E5B0A3] font-bold text-sm tracking-wide transition-opacity duration-300" href="admin-manage-shops.html">Shops</a>
+<a class="text-stone-500 dark:text-stone-400 text-sm tracking-wide hover:bg-[#f6f3f2] dark:hover:bg-stone-800 px-3 py-1 rounded transition-colors" href="admin-manage-users.html">Users</a>
+<a class="text-stone-500 dark:text-stone-400 text-sm tracking-wide hover:bg-[#f6f3f2] dark:hover:bg-stone-800 px-3 py-1 rounded transition-colors" href="admin-manage-withdrawals.html">Withdrawals</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="Admin Profile" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-8 max-w-7xl mx-auto space-y-12">
+<!-- Search & Filter Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-8 pt-8">
+<div class="space-y-4 flex-1 max-w-xl">
+<h2 class="text-4xl font-headline font-bold text-primary tracking-tight">Curate the Whare</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+<input class="w-full bg-surface-container-low border-none border-b-2 border-outline-variant/20 focus:border-primary focus:ring-0 py-4 pl-12 pr-4 rounded-t-lg transition-all text-on-surface" placeholder="Search boutiques by name, owner or category..." type="text"/>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex gap-2 bg-surface-container-low p-1.5 rounded-xl border border-outline-variant/10">
+<button class="px-6 py-2.5 rounded-lg bg-surface-container-lowest text-primary font-semibold text-sm shadow-sm">All</button>
+<button class="px-6 py-2.5 rounded-lg text-tertiary font-medium text-sm hover:bg-surface-container transition-colors">Pending</button>
+<button class="px-6 py-2.5 rounded-lg text-tertiary font-medium text-sm hover:bg-surface-container transition-colors">Open</button>
+<button class="px-6 py-2.5 rounded-lg text-tertiary font-medium text-sm hover:bg-surface-container transition-colors">Closed</button>
+</div>
+</section>
+<!-- Shop Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-24">
+<!-- Card 1: Pending Approval -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(124,85,73,0.04)] hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)] transition-shadow">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-white/80 overflow-hidden bg-white">
+<img alt="Whare Street Logo" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+</div>
+<div class="text-white">
+<p class="text-xs uppercase tracking-widest font-bold opacity-80">Urban Fashion</p>
+<h3 class="font-headline font-bold text-lg leading-tight">Whare Street</h3>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase tracking-widest">Pending Approval</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">New</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 py-2 border-y border-outline-variant/10">
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Items</p>
+<p class="text-lg font-headline font-bold text-on-surface">24</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Total Orders</p>
+<p class="text-lg font-headline font-bold text-on-surface">0</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-lg text-sm font-bold tracking-wide hover:opacity-90 transition-opacity">Approve</button>
+<button class="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg text-sm font-bold tracking-wide hover:bg-surface-container transition-colors">Details</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Open Shop -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(124,85,73,0.04)] hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)] transition-shadow">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-white/80 overflow-hidden bg-white">
+<img alt="Vellum Couture Logo" src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg"/>
+</div>
+<div class="text-white">
+<p class="text-xs uppercase tracking-widest font-bold opacity-80">High Fashion</p>
+<h3 class="font-headline font-bold text-lg leading-tight">Vellum Couture</h3>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold uppercase tracking-widest">Open</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 py-2 border-y border-outline-variant/10">
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Items</p>
+<p class="text-lg font-headline font-bold text-on-surface">142</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Total Orders</p>
+<p class="text-lg font-headline font-bold text-on-surface">1,208</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 border border-primary/20 text-primary py-3 rounded-lg text-sm font-bold tracking-wide hover:bg-primary-container/10 transition-colors">Close Shop</button>
+<button class="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg text-sm font-bold tracking-wide hover:bg-surface-container transition-colors">Details</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Closed Shop -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(124,85,73,0.04)] hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)] transition-shadow opacity-90">
+<div class="relative h-48 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-white/80 overflow-hidden bg-white">
+<img alt="Silk Traditions Logo" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+<div class="text-white">
+<p class="text-xs uppercase tracking-widest font-bold opacity-80">Traditional</p>
+<h3 class="font-headline font-bold text-lg leading-tight">Silk Traditions</h3>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-tertiary text-[10px] font-bold uppercase tracking-widest">Closed</span>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.2</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 py-2 border-y border-outline-variant/10">
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Items</p>
+<p class="text-lg font-headline font-bold text-on-surface">56</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Total Orders</p>
+<p class="text-lg font-headline font-bold text-on-surface">432</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-secondary text-on-secondary py-3 rounded-lg text-sm font-bold tracking-wide hover:opacity-90 transition-opacity">Re-Open</button>
+<button class="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-lg text-sm font-bold tracking-wide hover:bg-surface-container transition-colors">Details</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Another Pending -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_20px_40px_rgba(124,85,73,0.04)] hover:shadow-[0_20px_40px_rgba(124,85,73,0.08)] transition-shadow">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-2 border-white/80 overflow-hidden bg-white">
+<img alt="Petal Campus Logo" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+</div>
+<div class="text-white">
+<p class="text-xs uppercase tracking-widest font-bold opacity-80">Youth Fashion</p>
+<h3 class="font-headline font-bold text-lg leading-tight">Petal Campus</h3>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase tracking-widest">Pending Approval</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">New</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 py-2 border-y border-outline-variant/10">
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Items</p>
+<p class="text-lg font-headline font-bold text-on-surface">12</p>
+</div>
+<div>
+<p class="text-[10px] uppercase text-outline tracking-wider font-bold">Total Orders</p>
+<p class="text-lg font-headline font-bold text-on-surface">0</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-lg text-sm font-bold tracking-wide hover:opacity-90 transition-opacity">Approve</button>
+<button class="flex-1 bg-error-container text-on-error-container py-3 rounded-lg text-sm font-bold tracking-wide hover:opacity-80 transition-opacity">Decline</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-6 pt-3 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-105 transition-transform" href="admin-manage-shops.html">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Shops</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 opacity-60 hover:opacity-100 transition-opacity" href="admin-manage-users.html">
+<span class="material-symbols-outlined mb-1">group</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 opacity-60 hover:opacity-100 transition-opacity" href="admin-manage-withdrawals.html">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Withdrawals</span>
+</a>
+</nav>
+</body></html>

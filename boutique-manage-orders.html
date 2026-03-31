@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#837470",
+              "tertiary": "#5f5e5b",
+              "surface-variant": "#e4e2e1",
+              "on-primary-container": "#674238",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-fixed-variant": "#474744",
+              "on-tertiary-container": "#4c4c49",
+              "tertiary-fixed": "#e5e2de",
+              "surface-container-highest": "#e4e2e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#514441",
+              "primary-fixed-dim": "#eebbac",
+              "secondary": "#8c4b55",
+              "on-tertiary-fixed": "#1c1c1a",
+              "secondary-fixed": "#ffd9dd",
+              "on-primary-fixed-variant": "#623e33",
+              "secondary-container": "#feaab6",
+              "surface-bright": "#fbf9f8",
+              "on-surface": "#1b1c1c",
+              "inverse-on-surface": "#f3f0f0",
+              "on-secondary-container": "#7a3c46",
+              "primary-container": "#e3b1a2",
+              "inverse-surface": "#303030",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#eebbac",
+              "surface-tint": "#7c5549",
+              "primary": "#7c5549",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-container-high": "#eae8e7",
+              "surface-dim": "#dcd9d9",
+              "on-secondary-fixed-variant": "#70343e",
+              "error-container": "#ffdad6",
+              "background": "#fbf9f8",
+              "on-primary-fixed": "#2f140b",
+              "surface-container": "#f0eded",
+              "tertiary-container": "#bebcb8",
+              "outline-variant": "#d5c2be",
+              "on-secondary-fixed": "#3a0915",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fbf9f8",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<a href="boutique-dashboard.html" class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</a>
+<h1 class="font-serif text-2xl tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Manage Orders</h1>
+</div>
+<div class="flex items-center gap-3">
+<a href="boutique-notifications.html" class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</a>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-8">
+<!-- Status Filter Tabs -->
+<nav class="flex space-x-8 mb-12 overflow-x-auto pb-2 no-scrollbar" id="status-filters">
+<button class="status-tab flex-none text-[#7c5549] dark:text-[#E5B0A3] font-bold border-b-2 border-primary pb-2 text-sm tracking-widest uppercase active" onclick="filterStatus(this, 'New')">New</button>
+<button class="status-tab flex-none text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity text-sm tracking-widest uppercase pb-2" onclick="filterStatus(this, 'Pending')">Pending</button>
+<button class="status-tab flex-none text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity text-sm tracking-widest uppercase pb-2" onclick="filterStatus(this, 'Rented')">Rented</button>
+<button class="status-tab flex-none text-stone-500 dark:text-stone-400 hover:opacity-80 transition-opacity text-sm tracking-widest uppercase pb-2" onclick="filterStatus(this, 'Completed')">Completed</button>
+</nav>
+<!-- Orders Grid (Asymmetric Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10" id="orders-grid">
+<!-- Featured New Order Card (Larger) -->
+<div class="order-card md:col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-[0_20px_40px_rgba(124,85,73,0.05)] relative overflow-hidden group" data-status="New">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-2/5 aspect-[4/5] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] tracking-widest uppercase text-outline mb-1 block">Order #ORD-101</span>
+<h3 class="text-2xl font-serif text-on-surface">Jane Doe</h3>
+</div>
+<span class="status-badge px-3 py-1 bg-primary-container/30 text-on-primary-container text-[10px] uppercase tracking-widest font-semibold rounded-full">New Order</span>
+</div>
+<div class="space-y-4 mb-8">
+<div>
+<p class="text-sm font-medium text-on-surface">Thai Traditional Modern</p>
+<p class="text-xs text-outline">Size: Premium S • Rental: Oct 12 - Oct 15</p>
+</div>
+<p class="text-xl font-serif text-primary">฿1,500.00</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 action-buttons">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity" onclick="updateStatus(this, 'Confirmed')">Confirm Order</button>
+<button class="flex-1 bg-surface-container-highest text-on-surface py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-variant transition-colors" onclick="updateStatus(this, 'Declined')">Decline</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Order Card -->
+<div class="order-card md:col-span-6 lg:col-span-4 bg-surface-container-low rounded-xl p-6 flex flex-col justify-between" data-status="Pending">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] tracking-widest uppercase text-outline">#ORD-105</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden mb-4 bg-surface-container">
+<img class="w-full h-full object-cover" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+</div>
+<h3 class="text-xl font-serif mb-1">Eleanor Vance</h3>
+<p class="text-xs text-outline mb-4">Soft Girl Campus • Size: M</p>
+</div>
+<div class="action-buttons">
+<button class="w-full border border-outline/20 text-on-surface py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors" onclick="updateStatus(this, 'Rented')">Ship Now</button>
+</div>
+</div>
+<!-- Small Detail Card -->
+<div class="order-card md:col-span-6 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-[0_10px_30px_rgba(124,85,73,0.03)]" data-status="New">
+<span class="text-[10px] tracking-widest uppercase text-outline mb-4 block">#ORD-109</span>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" src="https://s.alicdn.com/%40sc04/kf/Hcb809152dc2f4b68b98b683cb5e01d37k/Thailand-Elephant-Pants-Female-Ethnic-Style-Loose-Wide-leg-Beach-Pants-Home-Leisure-High-Waist-Thin-Trend-Five-minute-Shorts.jpg_300x300.jpg"/>
+</div>
+<div>
+<h4 class="font-serif text-lg">Marcus Wright</h4>
+<p class="text-[10px] text-outline uppercase tracking-tight">Elephant Chill Pants • ฿350</p>
+</div>
+</div>
+<div class="flex gap-2 action-buttons">
+<button class="flex-1 bg-primary text-on-primary py-2 rounded-full text-[10px] font-bold uppercase tracking-widest" onclick="updateStatus(this, 'Confirmed')">Confirm</button>
+<button class="p-2 text-outline hover:text-error transition-colors" onclick="updateStatus(this, 'Declined')">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Asymmetric Spacer Content (Editorial Touch) -->
+<div class="hidden lg:flex lg:col-span-8 items-center justify-center p-12 border-2 border-dashed border-outline/10 rounded-xl">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-outline/30 mb-4" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-serif italic text-outline/60 text-lg">Excellence is in the attention to detail.</p>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-[0_-10px_30px_rgba(124,85,73,0.05)] border-t border-[#7c5549]/10">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#ffffff]/50 dark:bg-stone-800/50 rounded-xl px-3 py-1 scale-110 transition-transform" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-customer-inquiries.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
+</a>
+</nav>
+<script>
+    function filterStatus(tab, status) {
+        // Update tabs
+        document.querySelectorAll('.status-tab').forEach(t => {
+            t.classList.remove('text-[#7c5549]', 'dark:text-[#E5B0A3]', 'font-bold', 'border-b-2', 'border-primary');
+            t.classList.add('text-stone-500', 'dark:text-stone-400');
+        });
+        tab.classList.remove('text-stone-500', 'dark:text-stone-400');
+        tab.classList.add('text-[#7c5549]', 'dark:text-[#E5B0A3]', 'font-bold', 'border-b-2', 'border-primary');
+
+        // Filter cards
+        document.querySelectorAll('.order-card').forEach(card => {
+            if (card.dataset.status === status) {
+                card.style.display = 'block';
+                if (card.classList.contains('md:col-span-12')) card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function updateStatus(btn, newStatus) {
+        const card = btn.closest('.order-card');
+        const badge = card.querySelector('.status-badge');
+        const actionArea = card.querySelector('.action-buttons');
+
+        if (confirm(`Update order status to ${newStatus}?`)) {
+            if (badge) {
+                badge.textContent = newStatus;
+                badge.className = 'status-badge px-3 py-1 bg-emerald-100 text-emerald-800 text-[10px] uppercase tracking-widest font-semibold rounded-full';
+            }
+            actionArea.innerHTML = `<p class="text-xs font-bold text-emerald-600 uppercase tracking-widest flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">check_circle</span> Status Updated to ${newStatus}
+            </p>`;
+            card.dataset.status = newStatus;
+        }
+    }
+
+    // Initial filter
+    filterStatus(document.querySelector('.status-tab'), 'New');
+</script>
+</body></html>
+</body></html>

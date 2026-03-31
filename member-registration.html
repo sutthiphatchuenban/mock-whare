@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Member Registration - THE WHARE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#dcd9d9",
+              "surface-container": "#f0eded",
+              "secondary-fixed": "#ffd9dd",
+              "on-tertiary-fixed-variant": "#474744",
+              "surface-tint": "#7c5549",
+              "on-secondary-fixed-variant": "#70343e",
+              "on-secondary-container": "#7a3c46",
+              "primary-container": "#e3b1a2",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#eebbac",
+              "primary": "#7c5549",
+              "inverse-surface": "#303030",
+              "tertiary-container": "#bebcb8",
+              "background": "#fbf9f8",
+              "surface-bright": "#fbf9f8",
+              "on-surface": "#1b1c1c",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#e5e2de",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "on-tertiary-fixed": "#1c1c1a",
+              "primary-fixed": "#ffdbd1",
+              "on-primary-fixed-variant": "#623e33",
+              "outline": "#837470",
+              "secondary-container": "#feaab6",
+              "surface-container-low": "#f6f3f2",
+              "surface-container-highest": "#e4e2e1",
+              "error": "#ba1a1a",
+              "tertiary": "#5f5e5b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#ffb2bc",
+              "secondary": "#8c4b55",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#2f140b",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#eae8e7",
+              "surface": "#fbf9f8",
+              "surface-variant": "#e4e2e1",
+              "on-background": "#1b1c1c",
+              "on-secondary-fixed": "#3a0915",
+              "on-primary-container": "#674238",
+              "inverse-on-surface": "#f3f0f0",
+              "outline-variant": "#d5c2be",
+              "on-surface-variant": "#514441",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#4c4c49",
+              "inverse-primary": "#eebbac"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(246, 243, 242, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .form-input-minimal {
+            border: none;
+            border-bottom: 2px solid rgba(213, 194, 190, 0.2);
+            background-color: #f6f3f2;
+            transition: border-color 0.3s ease;
+        }
+        .form-input-minimal:focus {
+            border-bottom-color: #7c5549;
+            box-shadow: none;
+            outline: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-8 py-6 max-w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#7c5549] cursor-pointer hover:opacity-80 transition-opacity active:scale-95 duration-200" onclick="history.back()">close</span>
+</div>
+<div class="font-serif text-2xl tracking-tighter uppercase Noto Serif text-[#1b1c1c] dark:text-[#fbf9f8]">
+            THE WHARE
+        </div>
+<div class="w-10"></div> <!-- Spacer for center alignment -->
+</header>
+<main class="pt-32 pb-40 px-6 md:px-0 max-w-2xl mx-auto">
+<!-- Progress Indicator -->
+<div class="flex items-center justify-between mb-16 px-4">
+<div class="flex flex-col items-center gap-3 relative group">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-bold text-sm shadow-sm">1</div>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-primary font-semibold">Personal Info</span>
+<!-- Line -->
+<div class="absolute top-5 left-10 w-[calc(100%+2rem)] h-[1px] bg-primary-container z-[-1]"></div>
+</div>
+<div class="flex flex-col items-center gap-3 relative">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-medium text-sm border border-outline-variant/20">2</div>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/60">Style Profile</span>
+<div class="absolute top-5 left-10 w-[calc(100%+2rem)] h-[1px] bg-outline-variant/20 z-[-1]"></div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-medium text-sm border border-outline-variant/20">3</div>
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/60">Membership</span>
+</div>
+</div>
+<!-- Section Header -->
+<div class="text-center mb-16">
+<h1 class="font-headline text-4xl md:text-5xl text-on-surface tracking-tight mb-4">Create Your Profile</h1>
+<p class="font-body text-on-surface-variant/70 text-lg italic">The beginning of your bespoke journey with Somsri Fashion.</p>
+</div>
+<!-- Form Area -->
+<form action="somsri-home.html" class="space-y-10" onsubmit="event.preventDefault(); alert('Registration successful! Redirecting to home...'); window.location.href='somsri-home.html';">
+<!-- Profile Photo Upload -->
+<div class="flex flex-col items-center gap-6 mb-12">
+<div class="relative group">
+<div class="w-32 h-32 rounded-full overflow-hidden bg-surface-container-low flex items-center justify-center border border-outline-variant/20 shadow-inner cursor-pointer" onclick="alert('Open Photo Gallery / Camera')">
+<img alt="Profile placeholder" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqI3VEnNzBczGD9FGeg0yxx9_qzNwkKQCsZLChb9veVFBvdbQF64DJcgWr2ZQjzoDc7MuzybfmyfA5R-0Qlo-E6h3g3Sc3v3jKG72x4mIY0DTs6hkuTnfMlS6uJEupGLwxicN7WFYpVBdxT9bYdLNvzWrAzGG5U2TKWPje1yCIol2lPi-Zcs7lVnOC5XkpIrdSnLPSMiYsSgyfX7F4f1Y11ltQrgLk2M0JTFGLvBi_U38ZnlZG2ajHu_EapiDcIuteAPmyW90Bl8RX"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-110 transition-transform" onclick="alert('Open Photo Gallery / Camera')" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<label class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant/60">Upload Profile Portrait</label>
+</div>
+<!-- Input Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<div class="flex flex-col gap-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-primary font-bold px-1">First Name</label>
+<input class="form-input-minimal h-12 px-4 rounded-t-lg font-body text-on-surface placeholder:text-on-surface-variant/30" placeholder="e.g. Somsri" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-primary font-bold px-1">Last Name</label>
+<input class="form-input-minimal h-12 px-4 rounded-t-lg font-body text-on-surface placeholder:text-on-surface-variant/30" placeholder="e.g. Wattana" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-primary font-bold px-1">Email Address</label>
+<input class="form-input-minimal h-12 px-4 rounded-t-lg font-body text-on-surface placeholder:text-on-surface-variant/30" placeholder="whare@somsri.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-primary font-bold px-1">Phone Number</label>
+<input class="form-input-minimal h-12 px-4 rounded-t-lg font-body text-on-surface placeholder:text-on-surface-variant/30" placeholder="+66 00 000 0000" required="" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-primary font-bold px-1">Password</label>
+<input class="form-input-minimal h-12 px-4 rounded-t-lg font-body text-on-surface placeholder:text-on-surface-variant/30" placeholder="••••••••" required="" type="password"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-[10px] tracking-widest uppercase text-primary font-bold px-1">Confirm Password</label>
+<input class="form-input-minimal h-12 px-4 rounded-t-lg font-body text-on-surface placeholder:text-on-surface-variant/30" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-12 flex flex-col items-center gap-6">
+<button class="w-full md:w-64 bg-primary text-on-primary py-5 rounded-full font-label text-[12px] tracking-[0.2em] uppercase font-bold shadow-[0_10px_30px_rgba(124,85,73,0.15)] hover:shadow-[0_15px_40px_rgba(124,85,73,0.25)] transition-all active:scale-[0.98] flex items-center justify-center gap-3 group" type="submit">
+                    Next Step
+                    <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="font-body text-[12px] text-on-surface-variant/50">Already a member? <a class="text-primary font-semibold underline underline-offset-4" href="somsri-login.html">Log in here</a></p>
+</div>
+</form>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile as fixed navigation) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full glass-effect rounded-t-[2rem] flex justify-around items-center px-10 pb-8 pt-4 z-50 shadow-[0_-10px_40px_rgba(124,85,73,0.05)]">
+<div class="flex flex-col items-center justify-center bg-[#7c5549] text-white rounded-full px-6 py-2 active:scale-98 duration-300 cursor-pointer" onclick="window.location.href='member-registration.html'">
+<span class="material-symbols-outlined mb-1" data-icon="person_outline" style="font-variation-settings: 'FILL' 1;">person_outline</span>
+<span class="font-sans text-[10px] tracking-widest uppercase Manrope">MEMBER</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1b1c1c]/50 dark:text-stone-400 px-6 py-2 hover:text-[#7c5549] transition-colors cursor-pointer" onclick="window.location.href='boutique-onboarding-step1.html'">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span class="font-sans text-[10px] tracking-widest uppercase Manrope">BOUTIQUE</span>
+</div>
+</nav>
+<!-- Aesthetic Decorative Element -->
+<div class="fixed top-1/2 -right-24 -translate-y-1/2 opacity-5 pointer-events-none hidden lg:block">
+<div class="font-headline text-[20rem] leading-none select-none">R</div>
+</div>
+</body></html>
+<!-- Aesthetic Decorative Element -->
+<div class="fixed top-1/2 -right-24 -translate-y-1/2 opacity-5 pointer-events-none hidden lg:block">
+<div class="font-headline text-[20rem] leading-none select-none">R</div>
+</div>
+</body></html>

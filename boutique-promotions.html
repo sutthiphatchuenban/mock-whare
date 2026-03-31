@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#837470",
+              "tertiary": "#5f5e5b",
+              "surface-variant": "#e4e2e1",
+              "on-primary-container": "#674238",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-fixed-variant": "#474744",
+              "on-tertiary-container": "#4c4c49",
+              "tertiary-fixed": "#e5e2de",
+              "surface-container-highest": "#e4e2e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#514441",
+              "primary-fixed-dim": "#eebbac",
+              "secondary": "#8c4b55",
+              "on-tertiary-fixed": "#1c1c1a",
+              "secondary-fixed": "#ffd9dd",
+              "on-primary-fixed-variant": "#623e33",
+              "secondary-container": "#feaab6",
+              "surface-bright": "#fbf9f8",
+              "on-surface": "#1b1c1c",
+              "inverse-on-surface": "#f3f0f0",
+              "on-secondary-container": "#7a3c46",
+              "primary-container": "#e3b1a2",
+              "inverse-surface": "#303030",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#eebbac",
+              "surface-tint": "#7c5549",
+              "primary": "#7c5549",
+              "on-tertiary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-container-high": "#eae8e7",
+              "surface-dim": "#dcd9d9",
+              "on-secondary-fixed-variant": "#70343e",
+              "error-container": "#ffdad6",
+              "background": "#fbf9f8",
+              "on-primary-fixed": "#2f140b",
+              "surface-container": "#f0eded",
+              "tertiary-container": "#bebcb8",
+              "outline-variant": "#d5c2be",
+              "on-secondary-fixed": "#3a0915",
+              "on-background": "#1b1c1c",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "surface-container-low": "#f6f3f2",
+              "surface": "#fbf9f8",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .editorial-shadow {
+        box-shadow: 0 20px 40px rgba(124, 85, 73, 0.08);
+      }
+      ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen pb-32">
+<!-- Top Navigation Shell -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 transition-opacity hover:opacity-80 text-[#7c5549] dark:text-[#E5B0A3]" onclick="window.location.href='boutique-dashboard.html'">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-serif text-2xl tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Promotions</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-500 font-sans text-[10px] uppercase tracking-widest cursor-pointer hover:text-[#7c5549]" href="boutique-sales-insights.html">Overview</a>
+<span class="text-[#7c5549] font-bold font-sans text-[10px] uppercase tracking-widest cursor-pointer">Promotions</span>
+<a class="text-stone-500 font-sans text-[10px] uppercase tracking-widest cursor-pointer hover:text-[#7c5549]" href="boutique-sales-insights.html">Analytics</a>
+</div>
+<a class="active:scale-95 duration-200 transition-opacity hover:opacity-80 text-[#7c5549] dark:text-[#E5B0A3]" href="boutique-notifications.html">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12">
+<!-- Hero Action Section -->
+<section class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface mb-6 leading-tight">Curate Your <br/><span class="italic text-primary">Incentives</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-light">Design sophisticated offers that resonate with your clientele. Elevate the boutique experience through intentional seasonal storytelling.</p>
+</div>
+<div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full flex items-center gap-3 editorial-shadow hover:scale-[1.02] active:scale-95 transition-all duration-300" onclick="alert('Open New Promotion Editor')">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="font-label text-xs uppercase tracking-[0.2em] font-bold">Add Promotion</span>
+</button>
+</div>
+</section>
+<!-- Promotion Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1: Active -->
+<div class="promotion-card group relative flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500 hover:bg-surface-container">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:scale-110 transition-transform duration-700" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest/90 glass-effect px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold text-primary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Active
+                        </span>
+</div>
+<button class="absolute top-4 right-4 text-on-surface/70 hover:text-primary transition-colors" onclick="togglePromoMenu(this)">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl text-on-surface mb-2">Spring Street Chic</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">A seasonal invitation celebrating our Unisex Street Hoodie Set with a complimentary silk scarf.</p>
+<div class="mt-auto space-y-4 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Validity</span>
+<span class="text-on-surface font-medium">Mar 01 - Apr 30</span>
+</div>
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Redemptions</span>
+<span class="text-on-surface font-medium">142 uses</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Expired -->
+<div class="promotion-card group relative flex flex-col bg-surface-container-low rounded-xl overflow-hidden opacity-80 grayscale-[30%] hover:grayscale-0 transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-stone-100/90 glass-effect px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold text-stone-500 flex items-center gap-1.5">
+                            Expired
+                        </span>
+</div>
+<button class="absolute top-4 right-4 text-on-surface/70 hover:text-primary transition-colors" onclick="togglePromoMenu(this)">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl text-on-surface mb-2">Traditional Solstice</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">Exclusive access to our Thai Traditional Modern archives for VIP patrons.</p>
+<div class="mt-auto space-y-4 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Validity</span>
+<span class="text-on-surface font-medium">Dec 15 - Jan 05</span>
+</div>
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Redemptions</span>
+<span class="text-on-surface font-medium">89 uses</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Active (Asymmetric Highlight) -->
+<div class="promotion-card group relative flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden editorial-shadow transition-all duration-500 lg:translate-y-8">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            Active
+                        </span>
+</div>
+<button class="absolute top-4 right-4 text-on-surface/70 hover:text-primary transition-colors" onclick="togglePromoMenu(this)">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="font-headline text-2xl text-on-surface">Campus Curated Bundle</h3>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">Purchase the Soft Girl Campus Outfit and receive bespoke tailoring services at no additional cost.</p>
+<div class="mt-auto space-y-4 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Validity</span>
+<span class="text-on-surface font-medium">Ongoing</span>
+</div>
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Redemptions</span>
+<span class="text-on-surface font-medium">45 uses</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Draft/Upcoming -->
+<div class="promotion-card group relative flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://s.alicdn.com/%40sc04/kf/Hcb809152dc2f4b68b98b683cb5e01d37k/Thailand-Elephant-Pants-Female-Ethnic-Style-Loose-Wide-leg-Beach-Pants-Home-Leisure-High-Waist-Thin-Trend-Five-minute-Shorts.jpg_300x300.jpg"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold flex items-center gap-1.5">
+                            Scheduled
+                        </span>
+</div>
+<button class="absolute top-4 right-4 text-on-surface/70 hover:text-primary transition-colors" onclick="togglePromoMenu(this)">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline text-2xl text-on-surface mb-2">Elephant Chill Hour</h3>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">A private sunset viewing of our new Teen Elephant Chill Pants Set for loyalists only.</p>
+<div class="mt-auto space-y-4 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Validity</span>
+<span class="text-on-surface font-medium">May 15 - May 20</span>
+</div>
+<div class="flex justify-between items-center text-[11px] uppercase tracking-widest">
+<span class="text-stone-400">Redemptions</span>
+<span class="text-on-surface font-medium">0 uses</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-customer-inquiries.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
+</a>
+</nav>
+<script>
+    function togglePromoMenu(btn) {
+        const action = prompt('Choose action: "Edit", "End Now", or "Delete"');
+        if (action) {
+            if (action.toLowerCase() === 'delete') {
+                if (confirm('Delete this promotion?')) {
+                    btn.closest('.promotion-card').remove();
+                }
+            } else {
+                alert(action + ' triggered for this promotion.');
+            }
+        }
+    }
+</script>
+</body></html>
+</body></html>

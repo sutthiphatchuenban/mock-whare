@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#8c4b55",
+              "background": "#fbf9f8",
+              "surface-container-highest": "#e4e2e1",
+              "on-tertiary-fixed-variant": "#474744",
+              "on-primary-fixed": "#2f140b",
+              "surface-variant": "#e4e2e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#514441",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#674238",
+              "surface-container-high": "#eae8e7",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#e5e2de",
+              "secondary-fixed-dim": "#ffb2bc",
+              "primary-fixed-dim": "#eebbac",
+              "on-secondary-container": "#7a3c46",
+              "tertiary-container": "#bebcb8",
+              "surface-tint": "#7c5549",
+              "on-secondary-fixed-variant": "#70343e",
+              "outline-variant": "#d5c2be",
+              "on-background": "#1b1c1c",
+              "primary": "#7c5549",
+              "surface-bright": "#fbf9f8",
+              "outline": "#837470",
+              "on-error-container": "#93000a",
+              "tertiary": "#5f5e5b",
+              "surface": "#fbf9f8",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-container": "#4c4c49",
+              "inverse-primary": "#eebbac",
+              "surface-dim": "#dcd9d9",
+              "error-container": "#ffdad6",
+              "secondary-container": "#feaab6",
+              "error": "#ba1a1a",
+              "primary-container": "#e3b1a2",
+              "surface-container": "#f0eded",
+              "inverse-on-surface": "#f3f0f0",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#623e33",
+              "on-surface": "#1b1c1c",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f6f3f2",
+              "on-secondary-fixed": "#3a0915",
+              "secondary-fixed": "#ffd9dd",
+              "on-tertiary-fixed": "#1c1c1a",
+              "inverse-surface": "#303030"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-[#fbf9f8] dark:bg-stone-950 flex justify-between items-center w-full px-6 py-4">
+<button class="p-2 -ml-2 transition-colors hover:bg-[#f0eded] dark:hover:bg-stone-800 rounded-full active:scale-95 duration-200" onclick="history.back()">
+<span class="material-symbols-outlined text-[#7c5549] dark:text-[#E5B0A3]">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Top-up Credits</h1>
+<a class="p-2 -mr-2 transition-colors hover:bg-[#f0eded] dark:hover:bg-stone-800 rounded-full active:scale-95 duration-200" href="boutique-notifications.html">
+<span class="material-symbols-outlined text-[#7c5549] dark:text-[#E5B0A3]">notifications</span>
+</a>
+</header>
+<main class="max-w-md mx-auto px-6 pt-6">
+<!-- Balance Card: Purple-to-indigo gradient -->
+<section class="mb-10">
+<div class="relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-[#6b4fa3] via-[#4a4e91] to-[#3b3d71] text-white shadow-xl aspect-[1.8/1] flex flex-col justify-between">
+<!-- Abstract silk texture overlay -->
+<div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-purple-400 rounded-full blur-3xl"></div>
+</div>
+<div class="relative z-10">
+<p class="text-white/70 text-xs font-medium tracking-widest uppercase mb-1">Current Balance</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline font-bold">฿850</span>
+<span class="text-white/60 text-sm italic">Somsri Wallet</span>
+</div>
+</div>
+<div class="relative z-10 flex items-center gap-2 bg-white/10 backdrop-blur-md w-fit px-3 py-1.5 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<p class="text-xs font-medium">Instant Payment Ready</p>
+</div>
+</div>
+</section>
+<!-- Promotion Banner -->
+<section class="mb-8">
+<div class="bg-sky-50 dark:bg-sky-950/30 rounded-2xl p-4 flex items-center gap-4 border border-sky-100/50 dark:border-sky-900/30">
+<div class="bg-sky-100 dark:bg-sky-900/50 p-2.5 rounded-xl">
+<span class="material-symbols-outlined text-sky-600 dark:text-sky-400" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-sky-900 dark:text-sky-200">Exclusive Reward</h4>
+<p class="text-xs text-sky-700 dark:text-sky-400">Top up ฿1,000 get free ฿50 credit instantly</p>
+</div>
+</div>
+</section>
+<!-- Amount Selection Grid -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-4 px-1">
+<h3 class="text-lg font-headline font-bold text-on-surface">Select Amount</h3>
+<span class="text-xs text-stone-400 font-medium tracking-wide uppercase">Thai Baht (THB)</span>
+</div>
+<div class="grid grid-cols-3 gap-3" id="amount-selector">
+<!-- Option 500 -->
+<button class="amount-btn bg-surface-container-lowest border border-stone-100 py-6 rounded-2xl flex flex-col items-center justify-center transition-all active:scale-95 hover:border-primary-container" onclick="selectAmount(this, 500)">
+<span class="text-stone-400 text-[10px] font-bold uppercase tracking-tighter mb-1">Basic</span>
+<span class="text-lg font-bold text-on-surface-variant">฿500</span>
+</button>
+<!-- Option 1,000 Selected -->
+<button class="amount-btn relative bg-primary/5 border-2 border-primary py-6 rounded-2xl flex flex-col items-center justify-center transition-all active:scale-95" onclick="selectAmount(this, 1000)">
+<div class="absolute -top-2 bg-primary text-white text-[9px] px-2 py-0.5 rounded-full uppercase font-black tracking-widest shadow-sm">Popular</div>
+<span class="text-primary/60 text-[10px] font-bold uppercase tracking-tighter mb-1">Elite</span>
+<span class="text-lg font-bold text-primary">฿1,000</span>
+</button>
+<!-- Option 2,000 -->
+<button class="amount-btn bg-surface-container-lowest border border-stone-100 py-6 rounded-2xl flex flex-col items-center justify-center transition-all active:scale-95 hover:border-primary-container" onclick="selectAmount(this, 2000)">
+<span class="text-stone-400 text-[10px] font-bold uppercase tracking-tighter mb-1">Deluxe</span>
+<span class="text-lg font-bold text-on-surface-variant">฿2,000</span>
+</button>
+<!-- Option 3,000 -->
+<button class="amount-btn bg-surface-container-lowest border border-stone-100 py-6 rounded-2xl flex flex-col items-center justify-center transition-all active:scale-95 hover:border-primary-container" onclick="selectAmount(this, 3000)">
+<span class="text-stone-400 text-[10px] font-bold uppercase tracking-tighter mb-1">Premium</span>
+<span class="text-lg font-bold text-on-surface-variant">฿3,000</span>
+</button>
+<!-- Option 5,000 -->
+<button class="amount-btn bg-surface-container-lowest border border-stone-100 py-6 rounded-2xl flex flex-col items-center justify-center transition-all active:scale-95 hover:border-primary-container" onclick="selectAmount(this, 5000)">
+<span class="text-stone-400 text-[10px] font-bold uppercase tracking-tighter mb-1">Luxe</span>
+<span class="text-lg font-bold text-on-surface-variant">฿5,000</span>
+</button>
+<!-- Others -->
+<button class="amount-btn bg-surface-container-lowest border border-stone-100 py-6 rounded-2xl flex flex-col items-center justify-center transition-all active:scale-95 hover:border-primary-container group" onclick="handleOtherAmount()">
+<span class="material-symbols-outlined text-stone-400 mb-1 transition-transform group-hover:scale-110">edit_note</span>
+<span class="text-sm font-bold text-stone-500">Others</span>
+</button>
+</div>
+</section>
+<!-- Aesthetic Lookbook Insight (Asymmetric) -->
+<section class="mb-12 relative overflow-hidden h-48 rounded-3xl">
+<img alt="High fashion model in elegant neutral tones" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBesyxNkdb4g5_emFTah79PeW7UMmZKx6p04H9hi-PtqUI9oAe7XA0He74Zt6X61xTKaEdotztWdk120feaRU7atNvjSpmcHbmq3XoJlkiefMyJsigdZJ6uIxrC7pAGImXD9OQkx6mZUErKJplX_tIj5EoD3ffW_VdBIxf3U_rXr6E0_rEhwQq-e2G_ojwXeLLmhcsYZRhgFCAhX68Jp0zsPDs0J2ChaK0gYhN5xphFmAXdwlPsVU2WTX2kEoiI16QTzlNKpXg9LmXx"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#7c5549]/60 to-transparent flex items-center p-8">
+<div class="max-w-[60%]">
+<h3 class="text-white text-xl font-headline italic leading-tight">Elevate your closet with one click.</h3>
+<p class="text-white/80 text-[10px] font-medium tracking-[0.2em] uppercase mt-2">Member Privilege</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-24 left-0 right-0 px-6 z-40">
+<button class="w-full bg-primary hover:bg-[#8c4b55] text-white py-5 rounded-full font-bold shadow-2xl shadow-primary/30 flex items-center justify-center gap-3 transition-transform active:scale-95" id="pay-btn" onclick="processPayment()">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+<span id="pay-text">ชำระเงิน ฿1,000</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-[2rem] bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.08)] flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-home.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-categories.html">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Category</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-cart.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-my-rentals.html">
+<span class="material-symbols-outlined" data-icon="auto_renew">autorenew</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Rentals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#ffffff]/50 dark:bg-stone-800/50 rounded-xl px-3 py-1 scale-105 transition-all" href="somsri-profile.html">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Profile</span>
+</a>
+</nav>
+<script>
+    let selectedAmount = 1000;
+
+    function selectAmount(btn, amount) {
+        document.querySelectorAll('.amount-btn').forEach(b => {
+            b.classList.remove('bg-primary/5', 'border-2', 'border-primary');
+            b.classList.add('bg-surface-container-lowest', 'border', 'border-stone-100');
+            const spanText = b.querySelector('.text-primary');
+            if (spanText) {
+                spanText.classList.remove('text-primary');
+                spanText.classList.add('text-on-surface-variant');
+            }
+        });
+
+        btn.classList.remove('bg-surface-container-lowest', 'border', 'border-stone-100');
+        btn.classList.add('bg-primary/5', 'border-2', 'border-primary');
+        const spanText = btn.querySelectorAll('span')[1];
+        if (spanText) {
+            spanText.classList.remove('text-on-surface-variant');
+            spanText.classList.add('text-primary');
+        }
+
+        selectedAmount = amount;
+        document.getElementById('pay-text').innerText = `ชำระเงิน ฿${amount.toLocaleString()}`;
+    }
+
+    function handleOtherAmount() {
+        const amount = prompt('กรุณาระบุจำนวนเงินที่ต้องการเติม (ขั้นต่ำ ฿100):', '500');
+        if (amount && !isNaN(amount) && parseInt(amount) >= 100) {
+            selectedAmount = parseInt(amount);
+            document.getElementById('pay-text').innerText = `ชำระเงิน ฿${selectedAmount.toLocaleString()}`;
+            alert(`ระบุจำนวนเงิน ฿${selectedAmount.toLocaleString()} สำเร็จ`);
+        }
+    }
+
+    function processPayment() {
+        if (confirm(`ยืนยันการชำระเงินจำนวน ฿${selectedAmount.toLocaleString()}?`)) {
+            alert('การชำระเงินเสร็จสมบูรณ์! ขอบคุณที่ใช้บริการ Somsri Fashion');
+            window.location.href = 'somsri-profile.html';
+        }
+    }
+</script>
+</body></html>
+</body></html>

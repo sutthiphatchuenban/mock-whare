@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#8c4b55",
+              "primary-fixed-dim": "#eebbac",
+              "on-secondary-fixed": "#3a0915",
+              "surface-container-low": "#f6f3f2",
+              "on-tertiary-fixed-variant": "#474744",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "on-primary-fixed-variant": "#623e33",
+              "on-primary-container": "#674238",
+              "on-background": "#1b1c1c",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e4e2e1",
+              "surface-tint": "#7c5549",
+              "outline": "#837470",
+              "on-primary-fixed": "#2f140b",
+              "surface-dim": "#dcd9d9",
+              "on-surface": "#1b1c1c",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "background": "#fbf9f8",
+              "surface-bright": "#fbf9f8",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e4e2e1",
+              "on-error": "#ffffff",
+              "primary": "#7c5549",
+              "on-secondary-container": "#7a3c46",
+              "tertiary-fixed": "#e5e2de",
+              "tertiary-container": "#bebcb8",
+              "secondary-container": "#feaab6",
+              "on-surface-variant": "#514441",
+              "primary-container": "#e3b1a2",
+              "inverse-on-surface": "#f3f0f0",
+              "inverse-primary": "#eebbac",
+              "surface": "#fbf9f8",
+              "surface-container-high": "#eae8e7",
+              "outline-variant": "#d5c2be",
+              "primary-fixed": "#ffdbd1",
+              "inverse-surface": "#303030",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#ffd9dd",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#f0eded",
+              "on-secondary-fixed-variant": "#70343e",
+              "on-tertiary-fixed": "#1c1c1a",
+              "tertiary": "#5f5e5b",
+              "on-tertiary-container": "#4c4c49"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif-text {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3]">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-xl font-['Noto_Serif'] font-medium tracking-tight text-[#1b1c1c] dark:text-stone-100">จัดส่งสินค้า</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3]">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-xl mx-auto px-6 py-8 space-y-10">
+<!-- Order Info Section -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-[10px] uppercase tracking-widest font-bold text-primary/60">Order Reference</p>
+<h2 class="serif-text text-2xl font-medium tracking-tight">#BTQ-99201-TH</h2>
+</div>
+<div class="px-3 py-1 bg-secondary-container/20 rounded-full">
+<span class="text-[10px] font-bold text-on-secondary-container uppercase tracking-wider">Processing</span>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10 space-y-4">
+<div class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="person">person</span>
+</div>
+<div class="space-y-1">
+<p class="text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Recipient</p>
+<p class="font-semibold text-on-surface">Khun Saranya Wattana</p>
+<p class="text-sm text-on-surface-variant">+66 81 234 5678</p>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="location_on">location_on</span>
+</div>
+<div class="space-y-1">
+<p class="text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Shipping Address</p>
+<p class="text-sm leading-relaxed text-on-surface-variant">
+                            123 Luxury Avenue, Sukhumvit Soi 24, Khlong Tan,<br/>
+                            Khlong Toei, Bangkok 10110, Thailand
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Items to Ship -->
+<section class="space-y-6">
+<h3 class="serif-text text-lg font-medium">Items to Ship</h3>
+<div class="space-y-4">
+<!-- Product Item 1 -->
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-xl shadow-[0_4px_20px_rgba(124,85,73,0.04)]">
+<div class="w-20 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+<div class="flex-grow space-y-1">
+<h4 class="font-bold text-on-surface tracking-tight">Thai Traditional Modern</h4>
+<div class="flex gap-3 text-[11px] font-semibold text-on-surface-variant">
+<span>Size: Premium S</span>
+<span class="text-outline-variant">•</span>
+<span>Color: Traditional Red</span>
+</div>
+<div class="mt-2 py-1 px-2 bg-primary/5 rounded inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="text-[10px] uppercase font-bold text-primary">Rental: 4 Days</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Courier Selection -->
+<section class="space-y-6">
+<h3 class="serif-text text-lg font-medium">Courier Selection</h3>
+<div class="grid grid-cols-1 gap-3">
+<!-- Selected Option -->
+<label class="relative flex items-center p-4 rounded-xl bg-primary/5 border border-primary/20 cursor-pointer group transition-all">
+<input checked="" class="hidden" name="courier" type="radio"/>
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Kerry Express</p>
+<p class="text-[11px] text-primary/60 font-bold uppercase tracking-widest">Next day delivery</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary">Free</p>
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+</label>
+<!-- Unselected Option -->
+<label class="relative flex items-center p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant/30 cursor-pointer group transition-all">
+<input class="hidden" name="courier" type="radio"/>
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-outline" data-icon="electric_bolt">electric_bolt</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Flash Express</p>
+<p class="text-[11px] text-on-surface-variant font-bold uppercase tracking-widest">Standard delivery</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-surface-variant">Free</p>
+<div class="ml-auto w-5 h-5 rounded-full border-2 border-outline-variant"></div>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Tracking Field -->
+<section class="space-y-4">
+<h3 class="serif-text text-lg font-medium">Tracking Information</h3>
+<div class="space-y-2">
+<label class="text-[11px] uppercase tracking-widest font-bold text-on-surface-variant px-1">Tracking Number</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant/20 focus:border-primary focus:ring-0 px-4 py-4 rounded-t-lg transition-all text-on-surface font-medium placeholder:text-outline-variant/60" placeholder="Enter Tracking ID (e.g. KER9928374)" type="text"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40 hover:text-primary">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Confirm Button -->
+<section class="pt-6">
+<button class="w-full h-16 bg-primary text-on-primary rounded-full font-bold uppercase tracking-[0.2em] shadow-[0_10px_30px_rgba(124,85,73,0.3)] hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-3">
+<span>ยืนยันการจัดส่ง</span>
+<label class="group relative block cursor-pointer">
+<input checked="" class="peer hidden" name="courier" type="radio"/>
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-2xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-300">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<div>
+<span class="block font-headline text-lg font-bold">Standard Delivery</span>
+<span class="block text-xs font-medium text-on-surface-variant">Estimated arrival: 3-5 days</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-bold text-primary">$12.00</span>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+</label>
+<label class="group relative block cursor-pointer">
+<input class="peer hidden" name="courier" type="radio"/>
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-2xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-300">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<div>
+<span class="block font-headline text-lg font-bold">Express Couture</span>
+<span class="block text-xs font-medium text-on-surface-variant">Estimated arrival: 24-48 hours</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-bold text-primary">$28.00</span>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+</label>
+<label class="group relative block cursor-pointer">
+<input class="peer hidden" name="courier" type="radio"/>
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest rounded-2xl border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all duration-300">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary transition-colors group-hover:bg-primary-container">
+<span class="material-symbols-outlined text-3xl">store</span>
+</div>
+<div>
+<span class="block font-headline text-lg font-bold">Boutique Pickup</span>
+<span class="block text-xs font-medium text-on-surface-variant">Available for collection immediately</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-bold text-primary">Free</span>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-primary flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+</label>
+</div>
+<!-- Sticky Action Bar -->
+<div class="fixed bottom-24 left-0 w-full px-6 flex justify-center z-40">
+<button class="w-full max-w-lg bg-primary text-on-primary py-5 rounded-2xl font-label text-sm font-bold uppercase tracking-[0.2em] editorial-shadow hover:scale-[1.02] active:scale-95 transition-all" onclick="confirmShipping()">
+        Confirm Shipping
+    </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#ffffff]/50 dark:bg-stone-800/50 rounded-xl px-3 py-1 scale-105 transition-all" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-customer-inquiries.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
+</a>
+</nav>
+<script>
+    function confirmShipping() {
+        const courier = document.querySelector('input[name="courier"]:checked').closest('label').querySelector('.font-headline').innerText;
+        alert('Shipping Confirmed via ' + courier + '!\nOrder status updated to "Shipped".');
+        window.location.href = 'boutique-manage-orders.html';
+    }
+</script>
+</body></html>

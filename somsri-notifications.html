@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#8c4b55",
+              "background": "#fbf9f8",
+              "surface-container-highest": "#e4e2e1",
+              "on-tertiary-fixed-variant": "#474744",
+              "on-primary-fixed": "#2f140b",
+              "surface-variant": "#e4e2e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#514441",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#674238",
+              "surface-container-high": "#eae8e7",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#e5e2de",
+              "secondary-fixed-dim": "#ffb2bc",
+              "primary-fixed-dim": "#eebbac",
+              "on-secondary-container": "#7a3c46",
+              "tertiary-container": "#bebcb8",
+              "surface-tint": "#7c5549",
+              "on-secondary-fixed-variant": "#70343e",
+              "outline-variant": "#d5c2be",
+              "on-background": "#1b1c1c",
+              "primary": "#7c5549",
+              "surface-bright": "#fbf9f8",
+              "outline": "#837470",
+              "on-error-container": "#93000a",
+              "tertiary": "#5f5e5b",
+              "surface": "#fbf9f8",
+              "primary-fixed": "#ffdbd1",
+              "on-tertiary-container": "#4c4c49",
+              "inverse-primary": "#eebbac",
+              "surface-dim": "#dcd9d9",
+              "error-container": "#ffdad6",
+              "secondary-container": "#feaab6",
+              "error": "#ba1a1a",
+              "primary-container": "#e3b1a2",
+              "surface-container": "#f0eded",
+              "inverse-on-surface": "#f3f0f0",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#623e33",
+              "on-surface": "#1b1c1c",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f6f3f2",
+              "on-secondary-fixed": "#3a0915",
+              "secondary-fixed": "#ffd9dd",
+              "on-tertiary-fixed": "#1c1c1a",
+              "inverse-surface": "#303030"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .editorial-shadow {
+        box-shadow: 0 20px 40px rgba(124, 85, 73, 0.08);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface min-h-screen">
+<!-- Top Navigation Shell -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-[#7c5549]/5 flex justify-between items-center w-full px-6 py-4 shadow-sm">
+<a class="flex size-10 items-center justify-center rounded-full bg-stone-100 text-[#7c5549] hover:bg-stone-200 transition-all active:scale-90" href="somsri-home.html">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</a>
+<h1 class="font-headline font-bold tracking-tight text-xl text-primary">Notifications</h1>
+<button onclick="clearAllNotifications()" class="font-label text-[10px] font-black uppercase tracking-widest text-secondary hover:text-primary transition-all">
+            Clear All
+        </button>
+</header>
+<main class="max-w-2xl mx-auto px-6 pt-10 pb-32">
+<!-- Status Banner -->
+<div id="no-notifications-banner" class="hidden text-center py-24 opacity-60">
+<div class="size-20 rounded-full bg-stone-100 flex items-center justify-center text-stone-300 mx-auto mb-6">
+<span class="material-symbols-outlined text-4xl" data-icon="notifications_off">notifications_off</span>
+</div>
+<h2 class="font-headline text-2xl font-bold italic text-stone-400">All Quiet</h2>
+<p class="font-label text-[10px] font-black uppercase tracking-[0.2em] text-stone-300 mt-2">You're completely up to date</p>
+</div>
+
+<div id="notifications-container">
+<!-- Section: Today -->
+<div class="mb-14 notification-section">
+<h2 class="font-headline text-lg font-bold italic mb-6 text-on-surface-variant flex items-center gap-4">
+                Latest
+                <span class="h-px flex-grow bg-stone-100"></span>
+</h2>
+<div class="space-y-6">
+<!-- Notification 1 -->
+<div onclick="markAsRead(this)" class="notification-item group relative bg-white border border-[#7c5549]/5 rounded-[2rem] p-6 shadow-sm transition-all hover:shadow-xl hover:scale-[1.01] cursor-pointer">
+<div class="flex gap-5">
+<div class="flex-shrink-0 size-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 shadow-sm">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-on-surface text-lg leading-none">In Transit</h3>
+<div class="flex items-center gap-2">
+<span class="size-1.5 rounded-full bg-primary unread-dot"></span>
+<span class="text-[10px] font-black uppercase tracking-widest text-stone-300">15m</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed mb-4">Your Unisex Street Hoodie #KE12345 has arrived at the central whare branch.</p>
+<div class="flex gap-3">
+<a href="somsri-orders.html" class="px-4 py-2 bg-primary/5 text-primary rounded-lg text-[9px] font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Track Status</a>
+<button onclick="event.stopPropagation(); removeNotification(this.closest('.notification-item'))" class="px-3 py-2 text-stone-300 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification 2 -->
+<div onclick="markAsRead(this)" class="notification-item group relative bg-white border border-[#7c5549]/5 rounded-[2rem] p-6 shadow-sm transition-all hover:shadow-xl cursor-pointer">
+<div class="flex gap-5">
+<div class="flex-shrink-0 size-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shadow-sm">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-on-surface text-lg leading-none">Reservation Confirmed</h3>
+<div class="flex items-center gap-2">
+<span class="size-1.5 rounded-full bg-primary unread-dot"></span>
+<span class="text-[10px] font-black uppercase tracking-widest text-stone-300">2h</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">Maison Somsri has confirmed your Thai Traditional Modern for the upcoming event.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Section: Earlier -->
+<div class="mb-14 notification-section">
+<h2 class="font-headline text-lg font-bold italic mb-6 text-on-surface-variant flex items-center gap-4">
+                Earlier
+                <span class="h-px flex-grow bg-stone-100"></span>
+</h2>
+<div class="space-y-6">
+<!-- Notification 3 -->
+<div onclick="markAsRead(this)" class="notification-item opacity-60 grayscale-[0.5] group relative bg-stone-50 border border-stone-100 rounded-[2.5rem] p-6 transition-all cursor-pointer">
+<div class="flex gap-5">
+<div class="flex-shrink-0 size-14 bg-white rounded-2xl flex items-center justify-center text-stone-400 shadow-sm">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-on-surface text-lg">Whare Rewards</h3>
+<span class="text-[10px] font-black uppercase tracking-widest text-stone-400">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant font-medium leading-relaxed">You earned +125 points for your punctual return of the summer collection.</p>
+</div>
+</div>
+</div>
+<!-- Notification 4 -->
+<div onclick="markAsRead(this)" class="notification-item group relative overflow-hidden bg-stone-900 rounded-[2.5rem] p-0 transition-all hover:scale-[1.01] cursor-pointer">
+<div class="flex h-40">
+<div class="w-1/3 flex-shrink-0 relative">
+<img class="w-full h-full object-cover opacity-60" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-stone-900"></div>
+</div>
+<div class="flex-grow p-6 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base">sell</span>
+<h3 class="font-headline font-bold text-white text-lg">Special Invite</h3>
+</div>
+<span class="text-[9px] font-black uppercase tracking-widest text-stone-500">2d</span>
+</div>
+<p class="text-xs text-stone-300 font-bold tracking-wide mb-1 italic">Private Viewing: Soft Girl Collection</p>
+<p class="text-[10px] text-stone-500 font-black uppercase tracking-widest">Early access ends at midnight</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-[2.5rem] bg-white text-[#7c5549] backdrop-blur-xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.08)] flex justify-around items-center px-4 pb-8 pt-4">
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-home.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-categories.html">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Category</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-cart.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-my-rentals.html">
+<span class="material-symbols-outlined" data-icon="auto_renew">autorenew</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Rentals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Profile</span>
+</a>
+</nav>
+
+<script>
+    function markAsRead(el) {
+        el.classList.add('opacity-60', 'grayscale-[0.5]', 'bg-stone-50');
+        el.classList.remove('bg-white', 'shadow-xl');
+        const dot = el.querySelector('.unread-dot');
+        if(dot) dot.classList.add('hidden');
+    }
+
+    function removeNotification(el) {
+        el.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            el.remove();
+            checkEmptyState();
+        }, 300);
+    }
+
+    function clearAllNotifications() {
+        if(confirm('Dismiss all notifications from your whare history?')) {
+            const items = document.querySelectorAll('.notification-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => item.remove(), 300);
+                }, index * 100);
+            });
+            setTimeout(checkEmptyState, (items.length * 100) + 400);
+        }
+    }
+
+    function checkEmptyState() {
+        const sections = document.querySelectorAll('.notification-section');
+        sections.forEach(section => {
+            const items = section.querySelectorAll('.notification-item');
+            if(items.length === 0) section.classList.add('hidden');
+        });
+
+        const activeItems = document.querySelectorAll('.notification-item');
+        if(activeItems.length === 0) {
+            document.getElementById('no-notifications-banner').classList.remove('hidden');
+            document.getElementById('notifications-container').classList.add('hidden');
+        }
+    }
+</script>
+</body></html>

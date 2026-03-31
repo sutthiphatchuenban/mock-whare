@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manage Withdrawals | Whare Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#fbf9f8",
+              "secondary-container": "#feaab6",
+              "secondary": "#8c4b55",
+              "on-tertiary-container": "#4c4c49",
+              "secondary-fixed-dim": "#ffb2bc",
+              "on-surface": "#1b1c1c",
+              "background": "#fbf9f8",
+              "on-primary-container": "#674238",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#1c1c1a",
+              "secondary-fixed": "#ffd9dd",
+              "primary": "#7c5549",
+              "primary-fixed-dim": "#eebbac",
+              "on-tertiary-fixed-variant": "#474744",
+              "surface-container-low": "#f6f3f2",
+              "tertiary-fixed-dim": "#c8c6c2",
+              "outline": "#837470",
+              "surface-container-highest": "#e4e2e1",
+              "primary-container": "#e3b1a2",
+              "on-error-container": "#93000a",
+              "tertiary": "#5f5e5b",
+              "surface-variant": "#e4e2e1",
+              "on-primary-fixed": "#2f140b",
+              "on-error": "#ffffff",
+              "on-primary-fixed-variant": "#623e33",
+              "on-surface-variant": "#514441",
+              "inverse-on-surface": "#f3f0f0",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#e5e2de",
+              "surface-container": "#f0eded",
+              "on-background": "#1b1c1c",
+              "inverse-primary": "#eebbac",
+              "primary-fixed": "#ffdbd1",
+              "tertiary-container": "#bebcb8",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#fbf9f8",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#303030",
+              "surface-dim": "#dcd9d9",
+              "outline-variant": "#d5c2be",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#7c5549",
+              "on-secondary-container": "#7a3c46",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#eae8e7",
+              "on-secondary-fixed-variant": "#70343e",
+              "on-secondary-fixed": "#3a0915"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+        h1, h2, h3, .serif-italic {
+            font-family: 'Noto Serif', serif;
+            font-style: italic;
+        }
+        .glass-nav {
+            background: rgba(246, 243, 242, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-[#fbf9f8] dark:bg-stone-950 flex justify-between items-center w-full px-8 py-4">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#f6f3f2] p-2 rounded-full transition-colors" onclick="window.location.href='admin-dashboard.html'">
+<span class="material-symbols-outlined text-[#7c5549]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-xl font-serif tracking-tight text-[#1b1c1c] dark:text-stone-100">Manage Withdrawals</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden cursor-pointer" onclick="window.location.href='admin-dashboard.html'">
+<img class="w-full h-full object-cover" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 pt-8 space-y-12">
+<!-- Summary Cards: The Tonal Layering -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(124,85,73,0.05)] border-b-2 border-primary/10">
+<p class="text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-2">Pending Amount</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline font-bold text-primary">฿1,240,000</span>
+<span class="text-xs text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full" id="pending-badge">24 Requests</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(124,85,73,0.05)] border-b-2 border-secondary/10">
+<p class="text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-2">Approved Today</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline font-bold text-secondary">฿485,500</span>
+<span class="text-xs text-on-secondary-container bg-secondary-fixed px-2 py-0.5 rounded-full">+12% vs Yesterday</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/2"></div>
+</div>
+</div>
+</section>
+<!-- Status Tabs: Editorial Style -->
+<section class="flex border-b border-outline-variant/20 gap-8" id="status-tabs">
+<button onclick="filterRequests('pending', this)" class="tab-btn pb-4 text-sm font-bold tracking-widest uppercase border-b-2 border-primary text-primary transition-all">Pending</button>
+<button onclick="filterRequests('approved', this)" class="tab-btn pb-4 text-sm font-medium tracking-widest uppercase text-on-surface-variant/60 hover:text-on-surface transition-all">Approved</button>
+<button onclick="filterRequests('all', this)" class="tab-btn pb-4 text-sm font-medium tracking-widest uppercase text-on-surface-variant/60 hover:text-on-surface transition-all">All</button>
+</section>
+<!-- Withdrawal Requests List -->
+<section class="space-y-6" id="request-list">
+<!-- Request Card 1 -->
+<div class="request-card pending bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row items-center gap-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-6 flex-1">
+<div class="w-16 h-16 rounded-full bg-surface-container overflow-hidden ring-4 ring-surface-container-low">
+<img class="w-full h-full object-cover" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Maison de Luxe</h3>
+<p class="text-xs text-on-surface-variant/70 font-medium">REQ-99283 • Oct 24, 2023, 14:30</p>
+<div class="mt-3 flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="account_balance">account_balance</span>
+<span>Siam Commercial Bank</span>
+</div>
+<div class="text-on-surface-variant font-mono">**** 4829</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="text-2xl font-headline font-bold text-primary">฿45,000.00</span>
+<span class="badge text-[10px] uppercase tracking-tighter text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">Processing Priority</span>
+</div>
+<div class="action-buttons flex items-center gap-3">
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface text-sm font-bold tracking-tight hover:bg-surface-container-high transition-colors" onclick="handleDecline(this)">
+                        Decline
+                    </button>
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary text-sm font-bold tracking-tight shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity" onclick="handleApprove(this)">
+                        Approve
+                    </button>
+</div>
+</div>
+<!-- Request Card 2 -->
+<div class="request-card pending bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row items-center gap-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-6 flex-1">
+<div class="w-16 h-16 rounded-full bg-surface-container overflow-hidden ring-4 ring-surface-container-low">
+<img class="w-full h-full object-cover" src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Velvet &amp; Vine</h3>
+<p class="text-xs text-on-surface-variant/70 font-medium">REQ-99275 • Oct 24, 2023, 11:15</p>
+<div class="mt-3 flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="account_balance">account_balance</span>
+<span>Kasikorn Bank</span>
+</div>
+<div class="text-on-surface-variant font-mono">**** 1102</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="text-2xl font-headline font-bold text-primary">฿128,400.00</span>
+<span class="badge text-[10px] uppercase tracking-tighter text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">Standard</span>
+</div>
+<div class="action-buttons flex items-center gap-3">
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface text-sm font-bold tracking-tight hover:bg-surface-container-high transition-colors" onclick="handleDecline(this)">
+                        Decline
+                    </button>
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary text-sm font-bold tracking-tight shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity" onclick="handleApprove(this)">
+                        Approve
+                    </button>
+</div>
+</div>
+<!-- Request Card 3 -->
+<div class="request-card pending bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row items-center gap-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-6 flex-1">
+<div class="w-16 h-16 rounded-full bg-surface-container overflow-hidden ring-4 ring-surface-container-low">
+<img class="w-full h-full object-cover" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Whare Noir</h3>
+<p class="text-xs text-on-surface-variant/70 font-medium">REQ-99268 • Oct 23, 2023, 18:05</p>
+<div class="mt-3 flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="account_balance">account_balance</span>
+<span>Bangkok Bank</span>
+</div>
+<div class="text-on-surface-variant font-mono">**** 9934</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<span class="text-2xl font-headline font-bold text-primary">฿12,950.00</span>
+<span class="badge text-[10px] uppercase tracking-tighter text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">Standard</span>
+</div>
+<div class="action-buttons flex items-center gap-3">
+<button class="px-6 py-3 rounded-full bg-surface-container-highest text-on-surface text-sm font-bold tracking-tight hover:bg-surface-container-high transition-colors" onclick="handleDecline(this)">
+                        Decline
+                    </button>
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary text-sm font-bold tracking-tight shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity" onclick="handleApprove(this)">
+                        Approve
+                    </button>
+</div>
+</div>
+</section>
+<!-- Empty State / Pagination Hint (Subtle) -->
+<div class="pt-12 flex justify-center">
+<button class="text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant/40 hover:text-primary transition-colors flex items-center gap-2 group">
+                Load older requests
+                <span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-6 pt-3 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 opacity-60 hover:opacity-100 transition-opacity" href="admin-manage-shops.html">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Shops</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 opacity-60 hover:opacity-100 transition-opacity" href="admin-manage-users.html">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-105 transition-transform active:scale-95 duration-200 ease-out" href="admin-manage-withdrawals.html">
+<span class="material-symbols-outlined mb-1" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Withdrawals</span>
+</a>
+</nav>
+<script>
+    function filterRequests(status, btn) {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('border-primary', 'text-primary', 'font-bold');
+            b.classList.remove('border-b-2');
+            b.classList.add('text-on-surface-variant/60', 'font-medium');
+        });
+        btn.classList.add('border-primary', 'text-primary', 'font-bold', 'border-b-2');
+        btn.classList.remove('text-on-surface-variant/60', 'font-medium');
+
+        const cards = document.querySelectorAll('.request-card');
+        cards.forEach(card => {
+            if (status === 'all' || card.classList.contains(status)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function handleApprove(btn) {
+        if(!confirm('Approve this withdrawal?')) return;
+        const card = btn.closest('.request-card');
+        card.classList.remove('pending');
+        card.classList.add('approved');
+        const badge = card.querySelector('.badge');
+        badge.textContent = 'Approved';
+        badge.className = 'badge text-[10px] uppercase tracking-tighter text-on-primary bg-emerald-500 px-2 py-0.5 rounded';
+        
+        card.querySelector('.action-buttons').innerHTML = `
+            <span class="text-emerald-500 font-bold text-sm flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">check_circle</span> Approved
+            </span>
+        `;
+    }
+
+    function handleDecline(btn) {
+        if(!confirm('Decline this withdrawal?')) return;
+        const card = btn.closest('.request-card');
+        card.classList.add('opacity-50');
+        card.querySelector('.action-buttons').innerHTML = `
+            <span class="text-error font-bold text-sm flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">cancel</span> Declined
+            </span>
+        `;
+    }
+</script>
+</body></html>
+<!-- Empty State / Pagination Hint (Subtle) -->
+<div class="pt-12 flex justify-center">
+<button class="text-xs uppercase tracking-[0.3em] font-bold text-on-surface-variant/40 hover:text-primary transition-colors flex items-center gap-2 group">
+                Load older requests
+                <span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-6 pt-3 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 opacity-60 hover:opacity-100 transition-opacity" href="admin-manage-shops.html">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Shops</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 opacity-60 hover:opacity-100 transition-opacity" href="admin-manage-users.html">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-105 transition-transform active:scale-95 duration-200 ease-out" href="admin-manage-withdrawals.html">
+<span class="material-symbols-outlined mb-1" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="text-[11px] uppercase tracking-widest font-sans font-semibold">Withdrawals</span>
+</a>
+</nav>
+</body></html>

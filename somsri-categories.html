@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Somsri Fashion - Categories</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed": "#ffd9dd",
+            "error-container": "#ffdad6",
+            "surface-tint": "#7c5549",
+            "primary-fixed-dim": "#eebbac",
+            "secondary-fixed-dim": "#ffb2bc",
+            "surface": "#fbf9f8",
+            "secondary": "#8c4b55",
+            "on-surface": "#1b1c1c",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f6f3f2",
+            "outline-variant": "#d5c2be",
+            "on-primary": "#ffffff",
+            "surface-bright": "#fbf9f8",
+            "surface-dim": "#dcd9d9",
+            "inverse-primary": "#eebbac",
+            "inverse-on-surface": "#f3f0f0",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "on-background": "#1b1c1c",
+            "secondary-container": "#feaab6",
+            "tertiary-fixed": "#e5e2de",
+            "outline": "#837470",
+            "surface-container-highest": "#e4e2e1",
+            "primary-fixed": "#ffdbd1",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#4c4c49",
+            "tertiary-fixed-dim": "#c8c6c2",
+            "on-primary-fixed": "#2f140b",
+            "primary-container": "#e3b1a2",
+            "on-tertiary-fixed": "#1c1c1a",
+            "on-surface-variant": "#514441",
+            "on-secondary-fixed-variant": "#70343e",
+            "surface-container": "#f0eded",
+            "on-primary-fixed-variant": "#623e33",
+            "background": "#fbf9f8",
+            "tertiary-container": "#bebcb8",
+            "surface-container-high": "#eae8e7",
+            "on-primary-container": "#674238",
+            "tertiary": "#5f5e5b",
+            "surface-variant": "#e4e2e1",
+            "primary": "#7c5549",
+            "inverse-surface": "#303030",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#7a3c46",
+            "on-secondary-fixed": "#3a0915",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#474744"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      background-color: #fbf9f8;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="font-body text-on-surface pb-32">
+  <!-- TopAppBar -->
+  <header
+    class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-6 h-16 border-b border-[#7c5549]/5">
+    <button onclick="history.back()"
+      class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-70 transition-opacity active:scale-95 duration-150">
+      <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+    </button>
+    <h1 class="font-['Noto_Serif'] font-bold tracking-tight text-[#7c5549] dark:text-[#E5B0A3] text-xl">Explore Styles
+    </h1>
+    <div class="flex items-center gap-4">
+      <button class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity"
+        onclick="alert('Search feature coming soon!')">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+    </div>
+  </header>
+  <main class="max-w-screen-xl mx-auto px-6 space-y-12 mt-6 pb-32">
+    <!-- Main Categories Section (Bento Style) -->
+    <section>
+      <div class="grid grid-cols-2 gap-4" id="category-grid">
+        <!-- Card 1: Large Asymmetric -->
+        <div class="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-pointer shadow-lg shadow-black/5"
+          onclick="filterCategory('Evening Dress')">
+          <img alt="Couture"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-headline text-xl font-bold">Couture</p>
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mt-1">12 Pieces</p>
+          </div>
+          <div
+            class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-white text-sm">arrow_outward</span>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-pointer shadow-lg shadow-black/5 mt-8"
+          onclick="filterCategory('Suits')">
+          <img alt="Urban"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-headline text-xl font-bold">Urban</p>
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mt-1">45 Pieces</p>
+          </div>
+          <div
+            class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-white text-sm">arrow_outward</span>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-pointer shadow-lg shadow-black/5 -mt-8"
+          onclick="filterCategory('Thai Dress')">
+          <img alt="Ethnic"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            src="https://s.alicdn.com/%40sc04/kf/Hcb809152dc2f4b68b98b683cb5e01d37k/Thailand-Elephant-Pants-Female-Ethnic-Style-Loose-Wide-leg-Beach-Pants-Home-Leisure-High-Waist-Thin-Trend-Five-minute-Shorts.jpg_300x300.jpg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-headline text-xl font-bold">Ethnic</p>
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mt-1">28 Pieces</p>
+          </div>
+          <div
+            class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-white text-sm">arrow_outward</span>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="relative aspect-[3/4] rounded-2xl overflow-hidden group cursor-pointer shadow-lg shadow-black/5"
+          onclick="filterCategory('Wedding Dress')">
+          <img alt="Lifestyle"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <p class="font-headline text-xl font-bold">Lifestyle</p>
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mt-1">34 Pieces</p>
+          </div>
+          <div
+            class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-white text-sm">arrow_outward</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Other Categories (Grid of Icons) -->
+    <section class="py-6">
+      <h2 class="font-headline text-2xl text-on-surface font-bold mb-8">Browse by Aura</h2>
+      <div class="grid grid-cols-4 gap-y-10 gap-x-4">
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Clothing')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="apparel">apparel</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Clothing</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Summer')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="sunny">sunny</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Summer</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Kids')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="child_care">child_care</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Kids</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Jewelry')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="diamond">diamond</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Jewelry</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Royal')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="castle">castle</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Royal</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Cosplay')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="theater_comedy">theater_comedy</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Cosplay</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Winter')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="ac_unit">ac_unit</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Winter</span>
+        </div>
+        <div class="flex flex-col items-center space-y-3 cursor-pointer group" onclick="filterCategory('Workwear')">
+          <div
+            class="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center transition-all group-hover:bg-primary group-hover:rounded-2xl shadow-sm">
+            <span class="material-symbols-outlined text-primary text-2xl group-hover:text-white transition-colors"
+              data-icon="work">work</span>
+          </div>
+          <span
+            class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant text-center leading-tight group-hover:text-primary transition-colors">Workwear</span>
+        </div>
+      </div>
+    </section>
+    <!-- Popular in Category -->
+    <section class="space-y-6">
+      <h2 class="font-headline text-2xl text-on-surface font-bold">Recommended for You</h2>
+      <!-- Horizontal Sub-category Tabs -->
+      <div class="flex space-x-4 overflow-x-auto pb-4 no-scrollbar" id="tab-container">
+        <button
+          class="px-8 py-2.5 bg-primary text-white rounded-full whitespace-nowrap font-headline text-sm shadow-md shadow-primary/20 transition-all active:scale-95"
+          onclick="switchTab(this)">Curated</button>
+        <button
+          class="px-8 py-2.5 bg-surface-container-low text-primary rounded-full whitespace-nowrap font-headline text-sm hover:bg-primary/5 border border-transparent hover:border-primary/20 transition-all active:scale-95"
+          onclick="switchTab(this)">Newest</button>
+        <button
+          class="px-8 py-2.5 bg-surface-container-low text-primary rounded-full whitespace-nowrap font-headline text-sm hover:bg-primary/5 border border-transparent hover:border-primary/20 transition-all active:scale-95"
+          onclick="switchTab(this)">Trending</button>
+        <button
+          class="px-8 py-2.5 bg-surface-container-low text-primary rounded-full whitespace-nowrap font-headline text-sm hover:bg-primary/5 border border-transparent hover:border-primary/20 transition-all active:scale-95"
+          onclick="switchTab(this)">Best Rated</button>
+      </div>
+      <!-- Product Grid -->
+      <div class="grid grid-cols-2 gap-x-4 gap-y-10">
+        <!-- Product 1: Unisex Street Hoodie Set -->
+        <div class="space-y-3 group cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
+          <div class="relative aspect-[3/4] bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
+            <img alt="Unisex Street Hoodie Set"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg" />
+            <div
+              class="absolute top-3 left-3 bg-secondary text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+              Trending</div>
+            <button
+              class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-primary shadow-sm transition-transform active:scale-75"
+              onclick="toggleFavorite(event, this)">
+              <span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="px-1">
+            <h3 class="font-headline text-base font-bold text-on-surface line-clamp-1">Unisex Street Hoodie Set</h3>
+            <div class="flex items-center space-x-1.5 mb-1.5">
+              <span class="material-symbols-outlined text-[14px] text-orange-400" data-icon="star"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-[11px] text-on-surface-variant font-bold">4.8 · 150 rented</span>
+            </div>
+            <p class="text-primary font-bold text-lg">฿750 <span
+                class="text-[10px] font-medium text-outline tracking-wider uppercase">/ day</span></p>
+          </div>
+        </div>
+        <!-- Product 2: Teen Elephant Chill Pants Set -->
+        <div class="space-y-3 group cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
+          <div class="relative aspect-[3/4] bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
+            <img alt="Teen Elephant Chill Pants Set"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://s.alicdn.com/%40sc04/kf/Hcb809152dc2f4b68b98b683cb5e01d37k/Thailand-Elephant-Pants-Female-Ethnic-Style-Loose-Wide-leg-Beach-Pants-Home-Leisure-High-Waist-Thin-Trend-Five-minute-Shorts.jpg_300x300.jpg" />
+            <div
+              class="absolute top-3 left-3 bg-[#4e2e7f] text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+              Ethnic</div>
+            <button
+              class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-primary shadow-sm transition-transform active:scale-75"
+              onclick="toggleFavorite(event, this)">
+              <span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="px-1">
+            <h3 class="font-headline text-base font-bold text-on-surface line-clamp-1">Teen Elephant Chill Pants Set
+            </h3>
+            <div class="flex items-center space-x-1.5 mb-1.5">
+              <span class="material-symbols-outlined text-[14px] text-orange-400" data-icon="star"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-[11px] text-on-surface-variant font-bold">4.9 · 320 rented</span>
+            </div>
+            <p class="text-primary font-bold text-lg">฿350 <span
+                class="text-[10px] font-medium text-outline tracking-wider uppercase">/ day</span></p>
+          </div>
+        </div>
+        <!-- Product 3: Soft Girl Campus Outfit -->
+        <div class="space-y-3 group cursor-pointer" onclick="window.location.href='Whare-dress-rental.html'">
+          <div class="relative aspect-[3/4] bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
+            <img alt="Soft Girl Campus Outfit"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg" />
+            <div
+              class="absolute top-3 left-3 bg-pink-500 text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+              Campus</div>
+            <button
+              class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-primary shadow-sm transition-transform active:scale-75"
+              onclick="toggleFavorite(event, this)">
+              <span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="px-1">
+            <h3 class="font-headline text-base font-bold text-on-surface line-clamp-1">Soft Girl Campus Outfit</h3>
+            <div class="flex items-center space-x-1.5 mb-1.5">
+              <span class="material-symbols-outlined text-[14px] text-orange-400" data-icon="star"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-[11px] text-on-surface-variant font-bold">4.7 · 210 rented</span>
+            </div>
+            <p class="text-primary font-bold text-lg">฿550 <span
+                class="text-[10px] font-medium text-outline tracking-wider uppercase">/ day</span></p>
+          </div>
+        </div>
+        <!-- Product 4: Y2K Baby Crop Jeans Set -->
+        <div class="space-y-3 group cursor-pointer" onclick="window.location.href='Whare-dress-rental.html'">
+          <div class="relative aspect-[3/4] bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
+            <img alt="Y2K Baby Crop Jeans Set"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg" />
+            <div
+              class="absolute top-3 left-3 bg-blue-500 text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+              Y2K</div>
+            <button
+              class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-primary shadow-sm transition-transform active:scale-75"
+              onclick="toggleFavorite(event, this)">
+              <span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="px-1">
+            <h3 class="font-headline text-base font-bold text-on-surface line-clamp-1">Y2K Baby Crop Jeans Set</h3>
+            <div class="flex items-center space-x-1.5 mb-1.5">
+              <span class="material-symbols-outlined text-[14px] text-orange-400" data-icon="star"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-[11px] text-on-surface-variant font-bold">4.6 · 95 rented</span>
+            </div>
+            <p class="text-primary font-bold text-lg">฿650 <span
+                class="text-[10px] font-medium text-outline tracking-wider uppercase">/ day</span></p>
+          </div>
+        </div>
+        <!-- Product 5: Thai Traditional Modern -->
+        <div class="space-y-3 group cursor-pointer" onclick="window.location.href='Whare-dress-rental.html'">
+          <div class="relative aspect-[3/4] bg-surface-container-low rounded-2xl overflow-hidden shadow-md">
+            <img alt="Thai Traditional Modern"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg" />
+            <div
+              class="absolute top-3 left-3 bg-primary text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+              Premium</div>
+            <button
+              class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-primary shadow-sm transition-transform active:scale-75"
+              onclick="toggleFavorite(event, this)">
+              <span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+            </button>
+          </div>
+          <div class="px-1">
+            <h3 class="font-headline text-base font-bold text-on-surface line-clamp-1">Thai Traditional Modern</h3>
+            <div class="flex items-center space-x-1.5 mb-1.5">
+              <span class="material-symbols-outlined text-[14px] text-orange-400" data-icon="star"
+                style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="text-[11px] text-on-surface-variant font-bold">5.0 · 42 rented</span>
+            </div>
+            <p class="text-primary font-bold text-lg">฿1,500 <span
+                class="text-[10px] font-medium text-outline tracking-wider uppercase">/ day</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- BottomNavBar -->
+  <nav
+    class="fixed bottom-0 left-0 w-full z-50 rounded-t-[2rem] bg-white text-[#7c5549] backdrop-blur-xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.08)] flex justify-around items-center px-4 pb-6 pt-3">
+    <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
+      href="somsri-home.html">
+      <span class="material-symbols-outlined" data-icon="home">home</span>
+      <span
+        class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-[#7c5549] bg-primary/10 rounded-xl px-4 py-1.5 transition-all"
+      href="somsri-categories.html">
+      <span class="material-symbols-outlined" data-icon="category"
+        style="font-variation-settings: 'FILL' 1;">category</span>
+      <span
+        class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Category</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
+      href="somsri-cart.html">
+      <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+      <span
+        class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Cart</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
+      href="somsri-my-rentals.html">
+      <span class="material-symbols-outlined" data-icon="auto_renew">autorenew</span>
+      <span
+        class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Rentals</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
+      href="somsri-profile.html">
+      <span class="material-symbols-outlined" data-icon="person">person</span>
+      <span
+        class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Profile</span>
+    </a>
+  </nav>
+
+  <script>
+    function filterCategory(cat) {
+      alert(`Filtering results for: ${cat}`);
+    }
+
+    function switchTab(btn) {
+      document.querySelectorAll('#tab-container button').forEach(b => {
+        b.classList.remove('bg-primary', 'text-white', 'shadow-md', 'shadow-primary/20');
+        b.classList.add('bg-surface-container-low', 'text-primary');
+        b.classList.remove('border-transparent');
+        b.classList.add('border-primary/20');
+      });
+      btn.classList.add('bg-primary', 'text-white', 'shadow-md', 'shadow-primary/20');
+      btn.classList.remove('bg-surface-container-low', 'text-primary', 'border-primary/20');
+      btn.classList.add('border-transparent');
+      console.log(`Switched to tab: ${btn.innerText}`);
+    }
+
+    function toggleFavorite(event, btn) {
+      event.stopPropagation();
+      const icon = btn.querySelector('.material-symbols-outlined');
+      const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+
+      if (isFilled) {
+        icon.style.fontVariationSettings = "'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24";
+        icon.classList.remove('text-red-500');
+        icon.classList.add('text-primary');
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24";
+        icon.classList.remove('text-primary');
+        icon.classList.add('text-red-500');
+        alert('Added to favorites!');
+      }
+    }
+  </script>
+</body>
+
+</html>
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+</body>
+
+</html>

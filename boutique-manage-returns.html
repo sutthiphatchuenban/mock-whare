@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#8c4b55",
+                        "primary-fixed-dim": "#eebbac",
+                        "on-secondary-fixed": "#3a0915",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#623e33",
+                        "on-primary-container": "#674238",
+                        "on-background": "#1b1c1c",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e2e1",
+                        "surface-tint": "#7c5549",
+                        "outline": "#837470",
+                        "on-primary-fixed": "#2f140b",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "background": "#fbf9f8",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "primary": "#7c5549",
+                        "on-secondary-container": "#7a3c46",
+                        "tertiary-fixed": "#e5e2de",
+                        "tertiary-container": "#bebcb8",
+                        "secondary-container": "#feaab6",
+                        "on-surface-variant": "#514441",
+                        "primary-container": "#e3b1a2",
+                        "inverse-on-surface": "#f3f0f0",
+                        "inverse-primary": "#eebbac",
+                        "surface": "#fbf9f8",
+                        "surface-container-high": "#eae8e7",
+                        "outline-variant": "#d5c2be",
+                        "primary-fixed": "#ffdbd1",
+                        "inverse-surface": "#303030",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffd9dd",
+                        "secondary-fixed-dim": "#ffb2bc",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-secondary-fixed-variant": "#70343e",
+                        "on-tertiary-fixed": "#1c1c1a",
+                        "tertiary": "#5f5e5b",
+                        "on-tertiary-container": "#4c4c49"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+        .serif-text {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f8] dark:bg-stone-950">
+<div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity" onclick="window.location.href='boutique-dashboard.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-xl font-serif text-[#1b1c1c] dark:text-stone-100 font-medium tracking-tight">จัดการการคืน</h1>
+</div>
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 pt-4 space-y-8">
+<!-- Filter Tabs -->
+<div class="flex items-center p-1 bg-surface-container-low rounded-full w-fit mx-auto md:mx-0" id="return-filters">
+<button class="filter-tab px-6 py-2.5 rounded-full bg-primary text-on-primary text-sm font-semibold tracking-wide transition-all duration-300" onclick="filterReturns(this, 'Pending')">
+                รอตรวจสอบ (3)
+            </button>
+<button class="filter-tab px-6 py-2.5 rounded-full text-on-surface-variant text-sm font-semibold tracking-wide hover:bg-surface-variant/50 transition-all duration-300" onclick="filterReturns(this, 'Checked')">
+                ตรวจสอบแล้ว
+            </button>
+</div>
+<!-- Return List -->
+<div class="grid grid-cols-1 gap-6" id="return-list">
+<!-- Card 1 -->
+<div class="return-card bg-surface-container-lowest rounded-xl p-5 shadow-[0_20px_40px_rgba(124,85,73,0.05)] border-b-2 border-transparent hover:border-primary/10 transition-all group" data-status="Pending">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-32 h-40 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Y2K Baby Crop Jeans Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex justify-between items-start">
+<p class="text-[10px] font-bold tracking-widest text-primary/60 uppercase">Order ID: #BTQ-88291</p>
+<span class="status-badge px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase tracking-tighter">Pending</span>
+</div>
+<h2 class="serif-text text-lg font-medium text-on-surface">Y2K Baby Crop Jeans</h2>
+<p class="text-sm text-on-surface-variant">Size: M • Customer: Ms. Arisa Wong</p>
+</div>
+<div class="mt-4 p-3 bg-surface-container-low rounded-lg">
+<p class="text-xs font-semibold text-primary/80 uppercase tracking-wider mb-1">Reason for Return</p>
+<p class="text-sm italic text-on-surface-variant">"The fit is slightly larger than expected around the waistline."</p>
+</div>
+<div class="mt-6 flex gap-3 action-buttons">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all shadow-md shadow-primary/20" onclick="approveReturn(this)">
+                                ผ่าน
+                            </button>
+<button class="flex-1 border border-outline-variant/30 text-secondary py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-high active:scale-95 transition-all" onclick="deductReturn(this)">
+                                Deduct Damage
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="return-card bg-surface-container-lowest rounded-xl p-5 shadow-[0_20px_40px_rgba(124,85,73,0.05)] border-b-2 border-transparent hover:border-primary/10 transition-all group" data-status="Checked">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-32 h-40 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Soft Girl Campus Outfit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex justify-between items-start">
+<p class="text-[10px] font-bold tracking-widest text-primary/60 uppercase">Order ID: #BTQ-88285</p>
+<span class="status-badge px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-tighter">Approved</span>
+</div>
+<h2 class="serif-text text-lg font-medium text-on-surface">Soft Girl Campus Outfit</h2>
+<p class="text-sm text-on-surface-variant">Size: S • Customer: Mr. Thanachai S.</p>
+</div>
+<div class="mt-4 p-3 bg-surface-container-low rounded-lg">
+<p class="text-xs font-semibold text-primary/80 uppercase tracking-wider mb-1">Reason for Return</p>
+<p class="text-sm italic text-on-surface-variant">"Color appears darker than the online catalog photography."</p>
+</div>
+<div class="mt-6 flex gap-3 opacity-50 pointer-events-none">
+<button class="flex-1 bg-surface-container-highest text-on-surface-variant py-3 rounded-full text-xs font-bold uppercase tracking-widest">Completed</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="return-card bg-surface-container-lowest rounded-xl p-5 shadow-[0_20px_40px_rgba(124,85,73,0.05)] border-b-2 border-transparent hover:border-primary/10 transition-all group" data-status="Pending">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-32 h-40 flex-shrink-0 overflow-hidden rounded-lg">
+<img alt="Unisex Street Hoodie Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div class="space-y-1">
+<div class="flex justify-between items-start">
+<p class="text-[10px] font-bold tracking-widest text-primary/60 uppercase">Order ID: #BTQ-88277</p>
+<span class="status-badge px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold uppercase tracking-tighter">Pending</span>
+</div>
+<h2 class="serif-text text-lg font-medium text-on-surface">Unisex Street Hoodie</h2>
+<p class="text-sm text-on-surface-variant">Color: Black • Customer: K. Nattida</p>
+</div>
+<div class="mt-4 p-3 bg-surface-container-low rounded-lg">
+<p class="text-xs font-semibold text-primary/80 uppercase tracking-wider mb-1">Reason for Return</p>
+<p class="text-sm italic text-on-surface-variant">"Arrived with a minor loose thread on the sleeve."</p>
+</div>
+<div class="mt-6 flex gap-3 action-buttons">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all shadow-md shadow-primary/20" onclick="approveReturn(this)">
+                                ผ่าน
+                            </button>
+<button class="flex-1 border border-outline-variant/30 text-secondary py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-high active:scale-95 transition-all" onclick="deductReturn(this)">
+                                Deduct Damage
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-products.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-110 transition-transform active:scale-90 duration-300" href="boutique-manage-orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-wallet.html">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-customer-inquiries.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Chat</span>
+</a>
+</nav>
+<script>
+    function filterReturns(tab, status) {
+        document.querySelectorAll('.filter-tab').forEach(t => {
+            t.classList.remove('bg-primary', 'text-on-primary');
+            t.classList.add('text-on-surface-variant');
+        });
+        tab.classList.remove('text-on-surface-variant');
+        tab.classList.add('bg-primary', 'text-on-primary');
+
+        document.querySelectorAll('.return-card').forEach(card => {
+            if (card.dataset.status === status) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function approveReturn(btn) {
+        const card = btn.closest('.return-card');
+        if (confirm('Approve this return as Passed?')) {
+            const badge = card.querySelector('.status-badge');
+            badge.textContent = 'Approved';
+            badge.className = 'status-badge px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-tighter';
+            card.dataset.status = 'Checked';
+            card.querySelector('.action-buttons').innerHTML = '<p class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Return Completed</p>';
+            alert('Return approved successfully.');
+        }
+    }
+
+    function deductReturn(btn) {
+        const amount = prompt('Enter damage deduction amount:', '50.00');
+        if (amount) {
+            const card = btn.closest('.return-card');
+            const badge = card.querySelector('.status-badge');
+            badge.textContent = 'Deducted';
+            badge.className = 'status-badge px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold uppercase tracking-tighter';
+            card.dataset.status = 'Checked';
+            card.querySelector('.action-buttons').innerHTML = `<p class="text-xs font-bold text-amber-600 uppercase tracking-widest">Deducted: $${amount}</p>`;
+            alert(`Damage of $${amount} has been deducted from the refund.`);
+        }
+    }
+
+    // Initial filter
+    filterReturns(document.querySelector('.filter-tab'), 'Pending');
+</script>
+</body></html>
+</body></html>
