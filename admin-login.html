@@ -182,11 +182,12 @@
         const passIcon = document.getElementById('pass-icon');
         if (passInput.type === 'password') {
             passInput.type = 'text';
-            passIcon.textContent = 'visibility_off';
+            passIcon.setAttribute('data-lucide', 'eye-off');
         } else {
             passInput.type = 'password';
-            passIcon.textContent = 'visibility';
+            passIcon.setAttribute('data-lucide', 'eye');
         }
+        lucide.createIcons();
     }
 
     function handleLogin(e) {

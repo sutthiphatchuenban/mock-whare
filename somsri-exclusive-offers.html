@@ -8,12 +8,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
     rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -80,9 +75,7 @@
     }
   </script>
   <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-    }
+
 
     .editorial-shadow {
       box-shadow: 0 20px 40px rgba(124, 85, 73, 0.08);
@@ -106,13 +99,13 @@
       class="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f8] dark:bg-stone-950 flex justify-between items-center w-full px-6 h-16 border-b border-[#7c5549]/5 shadow-sm">
       <button onclick="history.back()"
         class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity active:scale-90 p-2 rounded-full">
-        <span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+        <i data-lucide="arrow-left" class="w-6 h-6 text-[#7c5549] dark:text-[#E5B0A3]"></i>
       </button>
       <h1 class="font-headline font-bold text-xl tracking-tight text-[#7c5549] dark:text-[#E5B0A3]">Exclusive Offers
       </h1>
       <button onclick="window.location.href='somsri-cart.html'"
         class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity active:scale-90 p-2 rounded-full">
-        <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+        <i data-lucide="shopping-bag" class="w-6 h-6 text-[#7c5549] dark:text-[#E5B0A3]"></i>
       </button>
     </header>
     <main class="pt-24 pb-40 px-6 max-w-5xl mx-auto space-y-12">
@@ -125,8 +118,7 @@
         <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 space-y-4">
           <div
             class="flex items-center space-x-2 bg-secondary text-white px-4 py-1.5 rounded-full w-fit shadow-lg shadow-secondary/20">
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;"
-              data-icon="cached">cached</span>
+            <i data-lucide="timer" class="w-3.5 h-3.5 text-white"></i>
             <span class="font-label text-[10px] uppercase tracking-widest font-bold">LIMITED TIME</span>
           </div>
           <h2 class="font-headline text-4xl md:text-6xl text-white leading-tight font-bold">20% OFF <br /><span
@@ -186,7 +178,7 @@
                   class="bg-primary text-on-primary text-[10px] font-label uppercase tracking-widest py-2.5 px-4 rounded-full hover:shadow-lg active:scale-90 transition-all flex items-center justify-center gap-2 group-hover:bg-primary/90"
                   onclick="copyCode('NEWUSER', this)">
                   <span>COPY</span>
-                  <span class="material-symbols-outlined text-[14px]">content_copy</span>
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                 </button>
               </div>
             </div>
@@ -209,8 +201,7 @@
               <div
                 class="absolute -bottom-4 -left-4 w-8 h-8 bg-[#fbf9f8] rounded-full border border-[#7c5549]/5 shadow-inner">
               </div>
-              <span class="material-symbols-outlined text-[#8c4b55] text-4xl"
-                data-icon="local_shipping">local_shipping</span>
+              <i data-lucide="truck" class="w-10 h-10 text-[#8c4b55]"></i>
               <p class="font-label text-[10px] uppercase tracking-widest text-[#8c4b55] mt-2 font-black">LOCKED</p>
             </div>
           </div>
@@ -238,7 +229,7 @@
                 <button
                   class="bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center hover:scale-110 active:scale-90 transition-all"
                   onclick="window.location.href='whare-dress-rental.html'">
-                  <span class="material-symbols-outlined text-3xl">arrow_forward</span>
+                  <i data-lucide="arrow-right" class="w-8 h-8"></i>
                 </button>
               </div>
             </div>
@@ -249,14 +240,13 @@
               class="flex-1 bg-secondary-container/20 rounded-3xl p-8 flex flex-col justify-between items-start relative overflow-hidden group shadow-sm hover:shadow-md transition-all cursor-pointer"
               onclick="alert('Loyalty points details...')">
               <div class="relative z-10">
-                <span class="material-symbols-outlined text-secondary text-5xl mb-4"
-                  style="font-variation-settings: 'FILL' 1;" data-icon="stars">stars</span>
+                <i data-lucide="sparkles" class="w-12 h-12 text-secondary fill-current"></i>
                 <h5 class="font-headline text-xl font-bold">Aura Points</h5>
                 <p class="text-sm font-body text-on-surface-variant mt-2 font-medium italic">Earn double aura on all
                   velvet rentals this weekend.</p>
               </div>
               <div class="absolute -right-12 -bottom-12 opacity-5 group-hover:opacity-20 transition-all duration-700">
-                <span class="material-symbols-outlined text-[160px]">diamond</span>
+                <i data-lucide="gem" class="w-40 h-40"></i>
               </div>
             </div>
             <div
@@ -295,31 +285,31 @@
       class="fixed bottom-0 left-0 w-full z-50 rounded-t-[2.5rem] bg-white text-[#7c5549] backdrop-blur-xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.08)] flex justify-around items-center px-4 pb-8 pt-4">
       <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
         href="somsri-home.html">
-        <span class="material-symbols-outlined" data-icon="home">home</span>
+        <i data-lucide="home" class="w-5 h-5"></i>
         <span
           class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Home</span>
       </a>
       <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
         href="somsri-categories.html">
-        <span class="material-symbols-outlined" data-icon="category">category</span>
+        <i data-lucide="layout-grid" class="w-5 h-5"></i>
         <span
           class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Category</span>
       </a>
       <a class="flex flex-col items-center justify-center text-[#7c5549] bg-primary/10 rounded-xl px-4 py-1.5 transition-all shadow-sm"
         href="somsri-exclusive-offers.html">
-        <span class="material-symbols-outlined" data-icon="sell" style="font-variation-settings: 'FILL' 1;">sell</span>
+        <i data-lucide="ticket-percent" class="w-5 h-5 fill-current"></i>
         <span
           class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Offers</span>
       </a>
       <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
         href="somsri-my-rentals.html">
-        <span class="material-symbols-outlined" data-icon="auto_renew">autorenew</span>
+        <i data-lucide="refresh-cw" class="w-5 h-5"></i>
         <span
           class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Rentals</span>
       </a>
       <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150"
         href="somsri-profile.html">
-        <span class="material-symbols-outlined" data-icon="person">person</span>
+        <i data-lucide="user" class="w-5 h-5"></i>
         <span
           class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Profile</span>
       </a>
@@ -346,6 +336,7 @@
           mins.innerText = (current - 1).toString().padStart(2, '0');
         }
       }, 60000);
+      lucide.createIcons();
     </script>
 </body>
 

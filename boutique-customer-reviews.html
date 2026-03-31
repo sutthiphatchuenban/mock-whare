@@ -5,8 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -72,9 +71,7 @@
       }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
+
         body {
             font-family: 'Manrope', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -95,12 +92,12 @@
 <div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-4">
 <button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity" onclick="window.location.href='boutique-dashboard.html'">
-<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<i data-lucide="arrow-left" class="w-6 h-6"></i>
 </button>
 <h1 class="font-['Noto_Serif'] font-medium tracking-tight text-xl text-[#1b1c1c] dark:text-stone-100">รีวิวจากลูกค้า</h1>
 </div>
 <button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity">
-<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+<i data-lucide="more-vertical" class="w-6 h-6"></i>
 </button>
 </div>
 </header>
@@ -111,11 +108,11 @@
 <div class="space-y-2">
 <span class="text-6xl font-headline font-bold text-primary">4.8</span>
 <div class="flex justify-center gap-1 text-secondary">
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star_half" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+<i data-lucide="star" class="w-5 h-5 fill-current"></i>
+<i data-lucide="star" class="w-5 h-5 fill-current"></i>
+<i data-lucide="star" class="w-5 h-5 fill-current"></i>
+<i data-lucide="star" class="w-5 h-5 fill-current"></i>
+<i data-lucide="star-half" class="w-5 h-5 fill-current"></i>
 </div>
 <p class="font-label text-on-surface-variant text-sm tracking-wide uppercase">from 256 reviews</p>
 </div>
@@ -150,7 +147,7 @@
 <h2 class="font-headline text-2xl font-semibold">Latest Reviews</h2>
 <button class="text-primary font-label text-sm font-bold flex items-center gap-2" onclick="sortReviews()">
                     Sort by Latest
-                    <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
 </button>
 </div>
 <!-- Review Item 1 -->
@@ -163,11 +160,11 @@
 <div>
 <h3 class="font-semibold text-on-surface">คุณแพรวา มณีรัตน์</h3>
 <div class="flex text-secondary scale-75 -ml-3">
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
 </div>
 </div>
 </div>
@@ -178,7 +175,7 @@
                         เนื้อผ้าดีมากค่ะ นุ่มและใส่สบายมาก ทรงสวยเหมือนในรูปเลย การตัดเย็บเนี๊ยบมาก สมกับที่เป็นแบรนด์นี้จริงๆ ค่ะ ประทับใจมาก
                     </p>
 <div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<i data-lucide="check-circle" class="w-4 h-4 text-primary"></i>
 <span class="text-xs font-bold text-on-surface-variant">สินค้า: Soft Girl Campus Outfit - Pink</span>
 </div>
 </div>
@@ -193,11 +190,11 @@
 <div>
 <h3 class="font-semibold text-on-surface">คุณธนพล วงศ์สวัสดิ์</h3>
 <div class="flex text-secondary scale-75 -ml-3">
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star">star</span>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4"></i>
 </div>
 </div>
 </div>
@@ -208,7 +205,7 @@
                         ส่งไวมากครับ แพ็คเกจจิ้งสวยงามหรูหรามาก ตัวสินค้าคุณภาพดีตามราคาครับ อาจจะไซส์เล็กกว่าปกตินิดหน่อย แต่โดยรวมโอเคเลย
                     </p>
 <div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<i data-lucide="check-circle" class="w-4 h-4 text-primary"></i>
 <span class="text-xs font-bold text-on-surface-variant">สินค้า: Teen Elephant Chill Pants Set</span>
 </div>
 </div>
@@ -223,11 +220,11 @@
 <div>
 <h3 class="font-semibold text-on-surface">คุณกมลวรรณ ชัยเจริญ</h3>
 <div class="flex text-secondary scale-75 -ml-3">
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
+<i data-lucide="star" class="w-4 h-4 fill-current"></i>
 </div>
 </div>
 </div>
@@ -242,7 +239,7 @@
 <img alt="Review Image" class="w-32 h-32 object-cover rounded-lg" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
 </div>
 <div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle">check_circle</span>
+<i data-lucide="check-circle" class="w-4 h-4 text-primary"></i>
 <span class="text-xs font-bold text-on-surface-variant">สินค้า: Unisex Street Hoodie Set</span>
 </div>
 </div>
@@ -258,23 +255,23 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl shadow-[0_-10px_40px_rgba(124,85,73,0.05)] border-t border-[#7c5549]/10">
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-dashboard.html">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<i data-lucide="layout-dashboard" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Dashboard</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-products.html">
-<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<i data-lucide="package" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Products</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-manage-orders.html">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Orders</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#7c5549] active:scale-90 transition-all duration-300" href="boutique-wallet.html">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<i data-lucide="wallet" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Wallet</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] scale-110 transition-transform active:scale-90 transition-all duration-300" href="boutique-customer-reviews.html">
-<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<i data-lucide="star" class="w-5 h-5 fill-current"></i>
 <span class="font-['Manrope'] text-[10px] uppercase tracking-widest font-semibold mt-1">Reviews</span>
 </a>
 </nav>
@@ -285,5 +282,8 @@
         items.reverse().forEach(item => list.appendChild(item));
         alert('Reviews sorted!');
     }
+</script>
+<script>
+    lucide.createIcons();
 </script>
 </body></html>

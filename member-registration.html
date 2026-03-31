@@ -6,8 +6,7 @@
 <title>Member Registration - THE WHARE</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/lucide@latest"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -73,9 +72,7 @@
       }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-        }
+
         .glass-effect {
             background: rgba(246, 243, 242, 0.7);
             backdrop-filter: blur(20px);
@@ -102,7 +99,7 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-8 py-6 max-w-full">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#7c5549] cursor-pointer hover:opacity-80 transition-opacity active:scale-95 duration-200" onclick="history.back()">close</span>
+<i data-lucide="x" class="w-6 h-6 text-[#7c5549] cursor-pointer hover:opacity-80 transition-opacity active:scale-95 duration-200" onclick="history.back()"></i>
 </div>
 <div class="font-serif text-2xl tracking-tighter uppercase Noto Serif text-[#1b1c1c] dark:text-[#fbf9f8]">
             THE WHARE
@@ -141,11 +138,11 @@
 <div class="w-32 h-32 rounded-full overflow-hidden bg-surface-container-low flex items-center justify-center border border-outline-variant/20 shadow-inner cursor-pointer" onclick="alert('Open Photo Gallery / Camera')">
 <img alt="Profile placeholder" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqI3VEnNzBczGD9FGeg0yxx9_qzNwkKQCsZLChb9veVFBvdbQF64DJcgWr2ZQjzoDc7MuzybfmyfA5R-0Qlo-E6h3g3Sc3v3jKG72x4mIY0DTs6hkuTnfMlS6uJEupGLwxicN7WFYpVBdxT9bYdLNvzWrAzGG5U2TKWPje1yCIol2lPi-Zcs7lVnOC5XkpIrdSnLPSMiYsSgyfX7F4f1Y11ltQrgLk2M0JTFGLvBi_U38ZnlZG2ajHu_EapiDcIuteAPmyW90Bl8RX"/>
 <div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-white text-3xl" data-icon="photo_camera">photo_camera</span>
+<i data-lucide="camera" class="w-8 h-8 text-white"></i>
 </div>
 </div>
-<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-110 transition-transform" onclick="alert('Open Photo Gallery / Camera')" type="button">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center" onclick="alert('Open Photo Gallery / Camera')" type="button">
+<i data-lucide="plus" class="w-4 h-4"></i>
 </button>
 </div>
 <label class="font-label text-[10px] tracking-widest uppercase text-on-surface-variant/60">Upload Profile Portrait</label>
@@ -181,7 +178,7 @@
 <div class="pt-12 flex flex-col items-center gap-6">
 <button class="w-full md:w-64 bg-primary text-on-primary py-5 rounded-full font-label text-[12px] tracking-[0.2em] uppercase font-bold shadow-[0_10px_30px_rgba(124,85,73,0.15)] hover:shadow-[0_15px_40px_rgba(124,85,73,0.25)] transition-all active:scale-[0.98] flex items-center justify-center gap-3 group" type="submit">
                     Next Step
-                    <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
 </button>
 <p class="font-body text-[12px] text-on-surface-variant/50">Already a member? <a class="text-primary font-semibold underline underline-offset-4" href="somsri-login.html">Log in here</a></p>
 </div>
@@ -190,11 +187,11 @@
 <!-- BottomNavBar (Hidden on desktop, shown on mobile as fixed navigation) -->
 <nav class="md:hidden fixed bottom-0 left-0 w-full glass-effect rounded-t-[2rem] flex justify-around items-center px-10 pb-8 pt-4 z-50 shadow-[0_-10px_40px_rgba(124,85,73,0.05)]">
 <div class="flex flex-col items-center justify-center bg-[#7c5549] text-white rounded-full px-6 py-2 active:scale-98 duration-300 cursor-pointer" onclick="window.location.href='member-registration.html'">
-<span class="material-symbols-outlined mb-1" data-icon="person_outline" style="font-variation-settings: 'FILL' 1;">person_outline</span>
+<i data-lucide="user" class="w-5 h-5 mb-1 fill-current"></i>
 <span class="font-sans text-[10px] tracking-widest uppercase Manrope">MEMBER</span>
 </div>
 <div class="flex flex-col items-center justify-center text-[#1b1c1c]/50 dark:text-stone-400 px-6 py-2 hover:text-[#7c5549] transition-colors cursor-pointer" onclick="window.location.href='boutique-onboarding-step1.html'">
-<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<i data-lucide="store" class="w-5 h-5 mb-1"></i>
 <span class="font-sans text-[10px] tracking-widest uppercase Manrope">BOUTIQUE</span>
 </div>
 </nav>
@@ -207,4 +204,7 @@
 <div class="fixed top-1/2 -right-24 -translate-y-1/2 opacity-5 pointer-events-none hidden lg:block">
 <div class="font-headline text-[20rem] leading-none select-none">R</div>
 </div>
+    <script>
+        lucide.createIcons();
+    </script>
 </body></html>

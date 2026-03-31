@@ -4,8 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
@@ -72,9 +71,7 @@
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
+
         .editorial-shadow {
             box-shadow: 0 20px 40px rgba(124, 85, 73, 0.08);
         }
@@ -93,11 +90,11 @@
 <!-- TopAppBar -->
 <header class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950 flex items-center justify-between px-6 h-16 w-full">
 <button class="active:scale-95 duration-200 transition-opacity hover:opacity-80 text-[#7c5549] dark:text-[#E5B0A3]" onclick="window.location.href='boutique-dashboard.html'">
-<span class="material-symbols-outlined">arrow_back</span>
+<i data-lucide="arrow-left" class="w-6 h-6"></i>
 </button>
 <h1 class="font-['Noto_Serif'] font-medium tracking-tight text-xl font-semibold text-[#7c5549] dark:text-[#E5B0A3] uppercase tracking-widest">Whare Boutique</h1>
 <a class="active:scale-95 duration-200 transition-opacity hover:opacity-80 text-[#7c5549] dark:text-[#E5B0A3]" href="boutique-notifications.html">
-<span class="material-symbols-outlined">notifications</span>
+<i data-lucide="bell" class="w-6 h-6"></i>
 </a>
 </header>
 <main class="max-w-2xl mx-auto px-6 pt-12">
@@ -108,7 +105,7 @@
 <img alt="Boutique Owner" class="w-full h-full object-cover" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
 </div>
 <div class="absolute bottom-1 right-1 bg-primary text-on-primary rounded-full p-1.5 border-2 border-surface">
-<span class="material-symbols-outlined text-sm">verified</span>
+<i data-lucide="badge-check" class="w-3.5 h-3.5"></i>
 </div>
 </div>
 <h2 class="font-headline text-3xl font-bold text-on-surface mb-1">Whare Boutique</h2>
@@ -124,53 +121,53 @@
 <button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl editorial-shadow group transition-all active:scale-[0.98]" onclick="window.location.href='boutique-onboarding-step1.html'">
 <div class="flex items-center gap-5">
 <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">storefront</span>
+<i data-lucide="store" class="w-6 h-6"></i>
 </div>
 <div class="text-left">
 <span class="block font-headline text-lg font-semibold">Store Info</span>
 <span class="block text-xs text-on-surface-variant font-medium">Manage address and business details</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+<i data-lucide="chevron-right" class="text-outline-variant group-hover:text-primary transition-colors w-5 h-5"></i>
 </button>
 <!-- Bank Accounts -->
 <button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl editorial-shadow group transition-all active:scale-[0.98]" onclick="alert('Payout settings coming soon')">
 <div class="flex items-center gap-5">
 <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">account_balance</span>
+<i data-lucide="landmark" class="w-6 h-6"></i>
 </div>
 <div class="text-left">
 <span class="block font-headline text-lg font-semibold">Bank Accounts</span>
 <span class="block text-xs text-on-surface-variant font-medium">Configure payout destinations</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+<i data-lucide="chevron-right" class="text-outline-variant group-hover:text-primary transition-colors w-5 h-5"></i>
 </button>
 <!-- Notifications -->
 <button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl editorial-shadow group transition-all active:scale-[0.98]" onclick="window.location.href='boutique-notifications.html'">
 <div class="flex items-center gap-5">
 <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">notifications_active</span>
+<i data-lucide="bell-ring" class="w-6 h-6"></i>
 </div>
 <div class="text-left">
 <span class="block font-headline text-lg font-semibold">Notifications</span>
 <span class="block text-xs text-on-surface-variant font-medium">Push and email preference center</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+<i data-lucide="chevron-right" class="text-outline-variant group-hover:text-primary transition-colors w-5 h-5"></i>
 </button>
 <!-- Help Center -->
 <button class="w-full flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl editorial-shadow group transition-all active:scale-[0.98]" onclick="window.location.href='boutique-customer-inquiries.html'">
 <div class="flex items-center gap-5">
 <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">help_center</span>
+<i data-lucide="help-circle" class="w-6 h-6"></i>
 </div>
 <div class="text-left">
 <span class="block font-headline text-lg font-semibold">Help Center</span>
 <span class="block text-xs text-on-surface-variant font-medium">Support docs and live chat</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+<i data-lucide="chevron-right" class="text-outline-variant group-hover:text-primary transition-colors w-5 h-5"></i>
 </button>
 </div>
 <!-- Log out button -->
@@ -183,25 +180,27 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-dashboard.html">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<i data-lucide="layout-dashboard" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-products.html">
-<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<i data-lucide="package" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Products</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-manage-orders.html">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Orders</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-wallet.html">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<i data-lucide="wallet" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Wallet</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="boutique-customer-inquiries.html">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<i data-lucide="message-square" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
 </a>
 </nav>
-</body></html>
+<script>
+    lucide.createIcons();
+</script>
 </body></html>

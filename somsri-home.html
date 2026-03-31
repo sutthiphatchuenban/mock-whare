@@ -6,7 +6,7 @@
 <title>Somsri - The Digital Whare</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<script src="https://unpkg.com/lucide@latest"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -72,9 +72,7 @@
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
+
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -113,21 +111,21 @@
 <p class="text-on-surface-variant text-[9px] uppercase tracking-tighter font-bold">Rewards</p>
 </div>
 <a href="somsri-notifications.html" class="relative flex size-10 items-center justify-center rounded-full bg-stone-100 text-on-surface transition-all hover:bg-stone-200 active:scale-90">
-<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<i data-lucide="bell" class="w-5 h-5 text-on-surface"></i>
 <span class="absolute top-2 right-2 size-2.5 bg-secondary rounded-full border-2 border-white"></span>
 </a>
 <a href="somsri-chat.html" class="flex size-10 items-center justify-center rounded-full bg-stone-100 text-on-surface transition-all hover:bg-stone-200 active:scale-90">
-<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+<i data-lucide="message-circle" class="w-5 h-5 text-on-surface"></i>
 </a>
 </div>
 </header>
 <main class="pb-32">
 <section class="px-6 py-6">
 <div class="group flex w-full items-center rounded-2xl bg-stone-100 px-5 py-4 transition-all focus-within:bg-white focus-within:ring-2 focus-within:ring-primary/10 shadow-sm">
-<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<i data-lucide="search" class="w-5 h-5 text-outline"></i>
 <input class="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-outline/60 border-none focus:ring-0 font-medium" placeholder="Search curated collections..." onkeyup="if(event.key==='Enter') alert('Searching for: ' + this.value)"/>
 <button class="flex items-center justify-center text-primary active:scale-90 transition-transform">
-<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<i data-lucide="sliders-horizontal" class="w-5 h-5 text-primary"></i>
 </button>
 </div>
 </section>
@@ -142,7 +140,7 @@
 <div class="flex items-center gap-3">
 <span class="bg-white text-black px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest shadow-xl">Explore</span>
 <div class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-white/20 transition-all">
-<span class="material-symbols-outlined text-white text-xl">arrow_forward</span>
+<i data-lucide="arrow-right" class="w-5 h-5 text-white"></i>
 </div>
 </div>
 </div>
@@ -152,49 +150,49 @@
 <div class="grid grid-cols-4 gap-y-10">
 <button onclick="window.location.href='somsri-return-item.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="assignment_return">assignment_return</span>
+<i data-lucide="rotate-ccw" class="w-6 h-6 text-primary"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Return</span>
 </button>
 <button onclick="window.location.href='somsri-chat.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<i data-lucide="message-circle" class="w-6 h-6 text-primary"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Chat</span>
 </button>
 <button onclick="window.location.href='somsri-orders.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-6 h-6 text-primary"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Orders</span>
 </button>
 <button onclick="window.location.href='somsri-deposit.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<i data-lucide="shield-check" class="w-6 h-6 text-primary fill-current"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Insurance</span>
 </button>
 <button onclick="window.location.href='somsri-profile.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="person">person</span>
+<i data-lucide="user" class="w-6 h-6 text-primary"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Account</span>
 </button>
 <button onclick="window.location.href='somsri-points-rewards.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<i data-lucide="sparkles" class="w-6 h-6 text-primary fill-current"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Points</span>
 </button>
 <button onclick="window.location.href='somsri-add-credit.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<i data-lucide="banknote" class="w-6 h-6 text-primary"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Credits</span>
 </button>
 <button onclick="window.location.href='somsri-exclusive-offers.html'" class="flex flex-col items-center gap-3 active:scale-95 transition-transform">
 <div class="flex size-14 items-center justify-center rounded-2xl bg-stone-50 border border-stone-100 text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="sell">sell</span>
+<i data-lucide="ticket-percent" class="w-6 h-6 text-primary"></i>
 </div>
 <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Promo</span>
 </button>
@@ -247,7 +245,7 @@
 <div class="relative aspect-[3/4] rounded-3xl overflow-hidden bg-stone-100 shadow-md group-hover:shadow-xl transition-all duration-500 cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
 <img alt="Unisex Street Hoodie Set" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://i.ebayimg.com/images/g/QJ4AAOSwfrJkVHqa/s-l400.jpg"/>
 <button onclick="event.stopPropagation(); toggleFav(this)" class="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white/90 text-stone-300 shadow-lg backdrop-blur-md active:scale-75 transition-transform">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
+<i data-lucide="heart" class="w-5 h-5"></i>
 </button>
 </div>
 <div class="mt-5 space-y-1">
@@ -255,7 +253,7 @@
 <div class="flex items-center justify-between">
 <p class="text-primary font-black text-sm">฿750 <span class="text-[10px] text-outline font-bold">/ day</span></p>
 <div class="flex items-center gap-1 bg-stone-50 px-2 py-0.5 rounded border border-stone-100">
-<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<i data-lucide="star" class="w-3.5 h-3.5 text-secondary fill-current"></i>
 <span class="text-[10px] font-black">4.8</span>
 </div>
 </div>
@@ -266,7 +264,7 @@
 <div class="relative aspect-[3/4] rounded-3xl overflow-hidden bg-stone-100 shadow-md group-hover:shadow-xl transition-all duration-500 cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
 <img alt="Teen Elephant Chill Pants Set" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://s.alicdn.com/%40sc04/kf/Hcb809152dc2f4b68b98b683cb5e01d37k/Thailand-Elephant-Pants-Female-Ethnic-Style-Loose-Wide-leg-Beach-Pants-Home-Leisure-High-Waist-Thin-Trend-Five-minute-Shorts.jpg_300x300.jpg"/>
 <button onclick="event.stopPropagation(); toggleFav(this)" class="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white/90 text-stone-300 shadow-lg backdrop-blur-md active:scale-75 transition-transform">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
+<i data-lucide="heart" class="w-5 h-5"></i>
 </button>
 </div>
 <div class="mt-5 space-y-1">
@@ -274,7 +272,7 @@
 <div class="flex items-center justify-between">
 <p class="text-primary font-black text-sm">฿350 <span class="text-[10px] text-outline font-bold">/ day</span></p>
 <div class="flex items-center gap-1 bg-stone-50 px-2 py-0.5 rounded border border-stone-100">
-<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<i data-lucide="star" class="w-3.5 h-3.5 text-secondary fill-current"></i>
 <span class="text-[10px] font-black">4.9</span>
 </div>
 </div>
@@ -285,7 +283,7 @@
 <div class="relative aspect-[3/4] rounded-3xl overflow-hidden bg-stone-100 shadow-md group-hover:shadow-xl transition-all duration-500 cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
 <img alt="Soft Girl Campus Outfit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://i.pinimg.com/736x/f1/16/a6/f116a6b6c2a3d926f0b2a2b772559eab.jpg"/>
 <button onclick="event.stopPropagation(); toggleFav(this)" class="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white/90 text-stone-300 shadow-lg backdrop-blur-md active:scale-75 transition-transform">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
+<i data-lucide="heart" class="w-5 h-5"></i>
 </button>
 </div>
 <div class="mt-5 space-y-1">
@@ -293,7 +291,7 @@
 <div class="flex items-center justify-between">
 <p class="text-primary font-black text-sm">฿550 <span class="text-[10px] text-outline font-bold">/ day</span></p>
 <div class="flex items-center gap-1 bg-stone-50 px-2 py-0.5 rounded border border-stone-100">
-<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<i data-lucide="star" class="w-3.5 h-3.5 text-secondary fill-current"></i>
 <span class="text-[10px] font-black">4.7</span>
 </div>
 </div>
@@ -304,7 +302,7 @@
 <div class="relative aspect-[3/4] rounded-3xl overflow-hidden bg-stone-100 shadow-md group-hover:shadow-xl transition-all duration-500 cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
 <img alt="Y2K Baby Crop Jeans Set" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://i.pinimg.com/736x/df/fb/96/dffb9620331f9b4f981b4c98d0cab0d1.jpg"/>
 <button onclick="event.stopPropagation(); toggleFav(this)" class="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white/90 text-stone-300 shadow-lg backdrop-blur-md active:scale-75 transition-transform">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
+<i data-lucide="heart" class="w-5 h-5"></i>
 </button>
 </div>
 <div class="mt-5 space-y-1">
@@ -312,7 +310,7 @@
 <div class="flex items-center justify-between">
 <p class="text-primary font-black text-sm">฿650 <span class="text-[10px] text-outline font-bold">/ day</span></p>
 <div class="flex items-center gap-1 bg-stone-50 px-2 py-0.5 rounded border border-stone-100">
-<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<i data-lucide="star" class="w-3.5 h-3.5 text-secondary fill-current"></i>
 <span class="text-[10px] font-black">4.6</span>
 </div>
 </div>
@@ -323,7 +321,7 @@
 <div class="relative aspect-[3/4] rounded-3xl overflow-hidden bg-stone-100 shadow-md group-hover:shadow-xl transition-all duration-500 cursor-pointer" onclick="window.location.href='whare-dress-rental.html'">
 <img alt="Thai Traditional Modern" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://i.pinimg.com/736x/1e/3b/1f/1e3b1f4ea53f23338e2ef61011bafe02.jpg"/>
 <button onclick="event.stopPropagation(); toggleFav(this)" class="absolute top-4 right-4 flex size-10 items-center justify-center rounded-full bg-white/90 text-stone-300 shadow-lg backdrop-blur-md active:scale-75 transition-transform">
-<span class="material-symbols-outlined text-[22px]">favorite</span>
+<i data-lucide="heart" class="w-5 h-5"></i>
 </button>
 </div>
 <div class="mt-5 space-y-1">
@@ -331,7 +329,7 @@
 <div class="flex items-center justify-between">
 <p class="text-primary font-black text-sm">฿1,500 <span class="text-[10px] text-outline font-bold">/ day</span></p>
 <div class="flex items-center gap-1 bg-stone-50 px-2 py-0.5 rounded border border-stone-100">
-<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<i data-lucide="star" class="w-3.5 h-3.5 text-secondary fill-current"></i>
 <span class="text-[10px] font-black">5.0</span>
 </div>
 </div>
@@ -342,23 +340,23 @@
 </main>
 <nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-[2.5rem] bg-white text-[#7c5549] backdrop-blur-xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.08)] flex justify-around items-center px-4 pb-8 pt-4">
 <a class="flex flex-col items-center justify-center text-[#7c5549] bg-primary/10 rounded-xl px-4 py-1.5 transition-all shadow-sm" href="somsri-home.html">
-<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<i data-lucide="home" class="w-5 h-5 fill-current"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Home</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-categories.html">
-<span class="material-symbols-outlined" data-icon="category">category</span>
+<i data-lucide="layout-grid" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Category</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-cart.html">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Cart</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-my-rentals.html">
-<span class="material-symbols-outlined" data-icon="autorenew">autorenew</span>
+<i data-lucide="refresh-cw" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Rentals</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-profile.html">
-<span class="material-symbols-outlined" data-icon="person">person</span>
+<i data-lucide="user" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Profile</span>
 </a>
 </nav>
@@ -374,14 +372,15 @@
     }
 
     function toggleFav(btn) {
-        const icon = btn.querySelector('span');
-        if (icon.style.fontVariationSettings.includes("'FILL' 1")) {
-            icon.style.fontVariationSettings = "'FILL' 0";
+        const icon = btn.querySelector('svg');
+        if (icon.classList.contains('fill-current')) {
+            icon.classList.remove('fill-current');
             btn.classList.replace('text-secondary', 'text-stone-300');
         } else {
-            icon.style.fontVariationSettings = "'FILL' 1";
+            icon.classList.add('fill-current');
             btn.classList.replace('text-stone-300', 'text-secondary');
         }
     }
+    lucide.createIcons();
 </script>
 </body></html>

@@ -6,8 +6,7 @@
 <title>Bank Information - Somsri Fashion</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -73,9 +72,7 @@
       }
     </script>
 <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
+
       .glass-card {
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(20px);
@@ -93,13 +90,13 @@
 <header class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950 flex justify-between items-center px-6 h-16 border-b border-[#7c5549]/5">
 <div class="flex items-center gap-4">
 <button onclick="history.back()" class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity active:scale-95 duration-150">
-<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<i data-lucide="arrow-left" class="w-6 h-6 text-[#7c5549] dark:text-[#E5B0A3] transition-opacity active:scale-95 duration-150"></i>
 </button>
 </div>
 <h1 class="font-['Noto_Serif'] font-bold tracking-tight text-xl text-[#7c5549] dark:text-[#E5B0A3]">Bank Accounts</h1>
 <div class="flex items-center gap-4">
 <a href="somsri-cart.html" class="text-[#7c5549] dark:text-[#E5B0A3] hover:opacity-80 transition-opacity active:scale-95 duration-150">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-6 h-6 text-[#7c5549] dark:text-[#E5B0A3] transition-opacity active:scale-95 duration-150"></i>
 </a>
 </div>
 </header>
@@ -116,7 +113,7 @@
 <div class="absolute top-0 right-0 p-4 flex items-center gap-2">
 <span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Default</span>
 <button class="text-outline hover:text-primary transition-colors p-1" onclick="handleBankMenu('Kasikorn Bank')">
-<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+<i data-lucide="more-vertical" class="w-5 h-5 text-outline hover:text-primary transition-colors"></i>
 </button>
 </div>
 <div class="flex items-start justify-between mb-8">
@@ -138,7 +135,7 @@
 <span class="text-[10px] uppercase tracking-widest text-outline font-bold mb-1">Account Number</span>
 <span class="text-2xl font-body tracking-[0.2em] text-on-surface">•••• •••• 5429</span>
 </div>
-<span class="material-symbols-outlined text-green-600" style="font-variation-settings: 'FILL' 1;">verified</span>
+<i data-lucide="badge-check" class="w-6 h-6 text-green-600 fill-current"></i>
 </div>
 </div>
 </div>
@@ -153,7 +150,7 @@
 </div>
 </div>
 <button class="text-outline hover:text-primary transition-colors p-1" onclick="handleBankMenu('Siam Commercial Bank')">
-<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+<i data-lucide="more-vertical" class="w-5 h-5 text-outline hover:text-primary transition-colors"></i>
 </button>
 </div>
 <div class="space-y-4">
@@ -170,7 +167,7 @@
 <!-- Add New Bank Button -->
 <button class="group w-full h-32 rounded-2xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 hover:border-primary transition-all duration-300 hover:bg-primary/5 active:scale-98" onclick="addBankAccount()">
 <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary-container transition-colors shadow-sm">
-<span class="material-symbols-outlined text-outline group-hover:text-on-primary-container" data-icon="add">add</span>
+<i data-lucide="plus" class="w-6 h-6 text-outline group-hover:text-on-primary-container transition-colors"></i>
 </div>
 <span class="font-label text-sm uppercase tracking-widest text-outline group-hover:text-primary font-bold">Connect New Bank Account</span>
 </button>
@@ -185,10 +182,10 @@
 <p class="text-on-surface-variant text-sm leading-relaxed font-medium">We use industry-standard encryption to protect your financial data. All connections are secured via bank-grade APIs provided by our fintech partners.</p>
 <div class="flex gap-4 pt-2 justify-center md:justify-start">
 <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-outline bg-white/50 px-3 py-1.5 rounded-full">
-<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span> AES-256
+<i data-lucide="shield" class="w-4 h-4 mr-2"></i> AES-256
                     </div>
 <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-outline bg-white/50 px-3 py-1.5 rounded-full">
-<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span> PCI DSS
+<i data-lucide="lock" class="w-4 h-4 mr-2"></i> PCI DSS
                     </div>
 </div>
 </div>
@@ -197,23 +194,23 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-[2rem] bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-t border-[#7c5549]/10 shadow-[0_-10px_40px_rgba(124,85,73,0.08)] flex justify-around items-center px-4 pb-6 pt-3">
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-home.html">
-<span class="material-symbols-outlined" data-icon="home">home</span>
+<i data-lucide="home" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Home</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-categories.html">
-<span class="material-symbols-outlined" data-icon="category">category</span>
+<i data-lucide="layout-grid" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Category</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-cart.html">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Cart</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150" href="somsri-my-rentals.html">
-<span class="material-symbols-outlined" data-icon="auto_renew">autorenew</span>
+<i data-lucide="refresh-cw" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Rentals</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#ffffff]/50 dark:bg-stone-800/50 rounded-xl px-3 py-1 scale-105 transition-all" href="somsri-profile.html">
-<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<i data-lucide="user" class="w-5 h-5 fill-current"></i>
 <span class="font-['Manrope'] text-[10px] items-center justify-center uppercase tracking-widest font-bold mt-1">Profile</span>
 </a>
 </nav>
@@ -238,6 +235,7 @@
             }
         }
     }
+    lucide.createIcons();
 </script>
 </body></html>
 </body></html>

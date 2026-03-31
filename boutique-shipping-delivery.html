@@ -4,8 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -72,9 +71,7 @@
       }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
+
         body {
             font-family: 'Manrope', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -94,14 +91,14 @@
 <header class="w-full top-0 sticky z-50 bg-[#fbf9f8] dark:bg-stone-950">
 <div class="flex items-center justify-between px-6 h-16 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-4">
-<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3]">
-<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3]" onclick="window.history.back()">
+<i data-lucide="arrow-left" class="w-6 h-6"></i>
 </button>
 <h1 class="text-xl font-['Noto_Serif'] font-medium tracking-tight text-[#1b1c1c] dark:text-stone-100">จัดส่งสินค้า</h1>
 </div>
 <div class="flex items-center gap-2">
 <button class="active:scale-95 duration-200 text-[#7c5549] dark:text-[#E5B0A3]">
-<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+<i data-lucide="more-vertical" class="w-6 h-6"></i>
 </button>
 </div>
 </div>
@@ -121,7 +118,7 @@
 <div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10 space-y-4">
 <div class="flex items-start gap-4">
 <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="person">person</span>
+<i data-lucide="user" class="w-5 h-5 text-primary"></i>
 </div>
 <div class="space-y-1">
 <p class="text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Recipient</p>
@@ -131,7 +128,7 @@
 </div>
 <div class="pt-4 border-t border-outline-variant/20 flex items-start gap-4">
 <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-lg" data-icon="location_on">location_on</span>
+<i data-lucide="map-pin" class="w-5 h-5 text-primary"></i>
 </div>
 <div class="space-y-1">
 <p class="text-[11px] uppercase tracking-widest font-bold text-on-surface-variant">Shipping Address</p>
@@ -160,7 +157,7 @@
 <span>Color: Traditional Red</span>
 </div>
 <div class="mt-2 py-1 px-2 bg-primary/5 rounded inline-flex items-center gap-2">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="calendar_today">calendar_today</span>
+<i data-lucide="calendar" class="w-3.5 h-3.5 text-primary"></i>
 <span class="text-[10px] uppercase font-bold text-primary">Rental: 4 Days</span>
 </div>
 </div>
@@ -177,7 +174,7 @@
 <div class="flex items-center justify-between w-full">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+<i data-lucide="truck" class="w-6 h-6 text-primary"></i>
 </div>
 <div>
 <p class="font-bold text-on-surface">Kerry Express</p>
@@ -198,7 +195,7 @@
 <div class="flex items-center justify-between w-full">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined text-outline" data-icon="electric_bolt">electric_bolt</span>
+<i data-lucide="zap" class="w-6 h-6 text-outline"></i>
 </div>
 <div>
 <p class="font-bold text-on-surface">Flash Express</p>
@@ -221,7 +218,7 @@
 <div class="relative group">
 <input class="w-full bg-surface-container-low border-b-2 border-outline-variant/20 focus:border-primary focus:ring-0 px-4 py-4 rounded-t-lg transition-all text-on-surface font-medium placeholder:text-outline-variant/60" placeholder="Enter Tracking ID (e.g. KER9928374)" type="text"/>
 <button class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40 hover:text-primary">
-<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<i data-lucide="scan-qr-code" class="w-5 h-5"></i>
 </button>
 </div>
 </div>
@@ -236,7 +233,7 @@
             <div class="flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 peer-checked:border-primary peer-checked:bg-primary/[0.03] transition-all duration-300">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary transition-colors group-hover:bg-primary-container">
-                        <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                        <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
                     <div>
                         <span class="block font-bold text-on-surface">Standard Delivery</span>
@@ -258,7 +255,7 @@
             <div class="flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 peer-checked:border-primary peer-checked:bg-primary/[0.03] transition-all duration-300">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary transition-colors group-hover:bg-primary-container">
-                        <span class="material-symbols-outlined text-2xl">bolt</span>
+                        <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
                     <div>
                         <span class="block font-bold text-on-surface">Express Couture</span>
@@ -280,7 +277,7 @@
             <div class="flex items-center justify-between p-5 bg-white rounded-2xl border border-outline-variant/20 peer-checked:border-primary peer-checked:bg-primary/[0.03] transition-all duration-300">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary transition-colors group-hover:bg-primary-container">
-                        <span class="material-symbols-outlined text-2xl">store</span>
+                        <i data-lucide="store" class="w-6 h-6"></i>
                     </div>
                     <div>
                         <span class="block font-bold text-on-surface">Boutique Pickup</span>
@@ -307,31 +304,33 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full h-20 bg-[#f6f3f2]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-[#7c5549]/10 shadow-[0_-10px_30px_rgba(124,85,73,0.05)] flex justify-around items-center px-4 pb-safe">
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-dashboard.html">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<i data-lucide="layout-dashboard" class="w-5 h-5 group-hover:text-[#8c4b55]"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-products.html">
-<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<i data-lucide="package" class="w-5 h-5 group-hover:text-[#8c4b55]"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Products</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#7c5549] dark:text-[#E5B0A3] bg-[#ffffff]/50 dark:bg-stone-800/50 rounded-xl px-3 py-1 scale-105 transition-all" href="boutique-manage-orders.html">
-<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<i data-lucide="shopping-bag" class="w-5 h-5"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Orders</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-wallet.html">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<i data-lucide="wallet" class="w-5 h-5 group-hover:text-[#8c4b55]"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Wallet</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-3 py-1 hover:text-[#8c4b55] transition-colors active:translate-y-0.5 duration-150 group" href="boutique-customer-inquiries.html">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<i data-lucide="message-square" class="w-5 h-5 group-hover:text-[#8c4b55]"></i>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
 </a>
 </nav>
 <script>
     function confirmShipping() {
-        const courier = document.querySelector('input[name="courier"]:checked').closest('label').querySelector('.font-headline').innerText;
-        alert('Shipping Confirmed via ' + courier + '!\nOrder status updated to "Shipped".');
+        const selectedLabel = document.querySelector('input[name="courier"]:checked').closest('label');
+        const courierName = selectedLabel.querySelector('.font-bold').innerText;
+        alert('Shipping Confirmed via ' + courierName + '!\nOrder status updated to "Shipped".');
         window.location.href = 'boutique-manage-orders.html';
     }
+    lucide.createIcons();
 </script>
 </body></html>

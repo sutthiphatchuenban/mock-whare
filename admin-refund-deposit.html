@@ -4,8 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -72,10 +71,7 @@
       }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
+
         .editorial-shadow {
             box-shadow: 0 20px 40px rgba(124, 85, 73, 0.08);
         }
@@ -91,7 +87,7 @@
 <header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-[#fbf9f8] z-40 shadow-sm">
 <div class="flex items-center gap-4">
 <button class="p-2 hover:bg-[#f6f3f2] rounded-full transition-colors" onclick="window.location.href='admin-dashboard.html'">
-<span class="material-symbols-outlined text-[#7c5549]">arrow_back</span>
+<i data-lucide="arrow-left" class="w-5 h-5 text-[#7c5549]"></i>
 </button>
 <h1 class="text-xl font-headline font-semibold tracking-tight text-[#7c5549]">Refund Deposit</h1>
 </div>
@@ -113,19 +109,19 @@
 </div>
 <nav class="flex flex-col gap-1">
 <a class="flex items-center space-x-3 text-stone-500 px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="admin-dashboard.html">
-<span class="material-symbols-outlined">dashboard</span>
+<i data-lucide="layout-dashboard" class="w-5 h-5"></i>
 <span class="font-label text-xs tracking-wider uppercase">Dashboard</span>
 </a>
 <a class="flex items-center space-x-3 bg-white text-[#7c5549] rounded-lg px-4 py-3 shadow-sm hover:translate-x-1 transition-transform duration-200" href="admin-refund-deposit.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<i data-lucide="banknote" class="w-5 h-5"></i>
 <span class="font-label text-xs tracking-wider uppercase">Deposits</span>
 </a>
 <a class="flex items-center space-x-3 text-stone-500 px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="admin-manage-promotions.html">
-<span class="material-symbols-outlined">sell</span>
+<i data-lucide="tag" class="w-5 h-5"></i>
 <span class="font-label text-xs tracking-wider uppercase">Promotions</span>
 </a>
 <a class="flex items-center space-x-3 text-stone-500 px-4 py-3 hover:translate-x-1 transition-transform duration-200" href="admin-manage-shops.html">
-<span class="material-symbols-outlined">store</span>
+<i data-lucide="store" class="w-5 h-5"></i>
 <span class="font-label text-xs tracking-wider uppercase">Shops</span>
 </a>
 </nav>
@@ -137,7 +133,7 @@
 <!-- Card 1 -->
 <div class="bg-surface-container-lowest rounded-xl p-8 editorial-shadow border-b-2 border-primary/10">
 <div class="flex justify-between items-start mb-4">
-<span class="material-symbols-outlined text-primary bg-primary-container/20 p-3 rounded-full">pending_actions</span>
+<i data-lucide="clock" class="w-10 h-10 text-primary bg-primary-container/20 p-2.5 rounded-full"></i>
 <span class="text-xs font-label font-bold text-stone-400 uppercase tracking-widest">Pending Refunds</span>
 </div>
 <div class="flex items-baseline gap-2">
@@ -149,7 +145,7 @@
 <div class="bg-primary rounded-xl p-8 editorial-shadow relative overflow-hidden group">
 <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110 duration-700"></div>
 <div class="flex justify-between items-start mb-4 relative z-10">
-<span class="material-symbols-outlined text-on-primary bg-white/10 p-3 rounded-full">check_circle</span>
+<i data-lucide="check-circle" class="w-10 h-10 text-on-primary bg-white/10 p-2.5 rounded-full"></i>
 <span class="text-xs font-label font-bold text-primary-fixed-dim uppercase tracking-widest">Refunded Today</span>
 </div>
 <div class="flex items-baseline gap-2 relative z-10">
@@ -213,7 +209,7 @@
                             Refund
                         </button>
 <button class="p-2 text-stone-400 hover:text-error hover:bg-error-container/20 rounded-lg transition-all" title="Deduct Damage Fee" onclick="handleDeduct(this)">
-<span class="material-symbols-outlined">report_problem</span>
+<i data-lucide="alert-triangle" class="w-5 h-5"></i>
 </button>
 </div>
 </div>
@@ -253,7 +249,7 @@
                             Refund
                         </button>
 <button class="p-2 text-stone-400 hover:text-error hover:bg-error-container/20 rounded-lg transition-all" title="Deduct Damage Fee" onclick="handleDeduct(this)">
-<span class="material-symbols-outlined">report_problem</span>
+<i data-lucide="alert-triangle" class="w-5 h-5"></i>
 </button>
 </div>
 </div>
@@ -293,7 +289,7 @@
                             Refund
                         </button>
 <button class="p-2 text-stone-400 hover:text-error hover:bg-error-container/20 rounded-lg transition-all" title="Deduct Damage Fee" onclick="handleDeduct(this)">
-<span class="material-symbols-outlined">report_problem</span>
+<i data-lucide="alert-triangle" class="w-5 h-5"></i>
 </button>
 </div>
 </div>
@@ -303,19 +299,19 @@
 <!-- BottomNavBar (Mobile Only) -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-[#fbf9f8]/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(124,85,73,0.05)] rounded-t-2xl">
 <a class="flex flex-col items-center justify-center text-stone-400" href="admin-dashboard.html">
-<span class="material-symbols-outlined">analytics</span>
+<i data-lucide="bar-chart-2" class="w-5 h-5"></i>
 <span class="font-label text-[10px] font-bold uppercase tracking-widest mt-1">Metrics</span>
 </a>
 <a class="flex flex-col items-center justify-center text-[#7c5549] bg-[#7c5549]/10 rounded-xl px-3 py-1" href="admin-refund-deposit.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<i data-lucide="receipt" class="w-5 h-5"></i>
 <span class="font-label text-[10px] font-bold uppercase tracking-widest mt-1">Refunds</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400" href="admin-manage-promotions.html">
-<span class="material-symbols-outlined">loyalty</span>
+<i data-lucide="star" class="w-5 h-5"></i>
 <span class="font-label text-[10px] font-bold uppercase tracking-widest mt-1">Promos</span>
 </a>
 <a class="flex flex-col items-center justify-center text-stone-400" href="admin-manage-users.html">
-<span class="material-symbols-outlined">admin_panel_settings</span>
+<i data-lucide="settings" class="w-5 h-5"></i>
 <span class="font-label text-[10px] font-bold uppercase tracking-widest mt-1">Admin</span>
 </a>
 </nav>
@@ -353,9 +349,10 @@
         badge.className = 'status-badge px-3 py-1 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-widest rounded-full';
         card.querySelector('.action-buttons').innerHTML = `
             <span class="text-primary font-bold text-xs flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">check_circle</span> Processed
+                <i data-lucide="check-circle" class="w-4 h-4"></i> Processed
             </span>
         `;
+        lucide.createIcons();
     }
 
     function handleDeduct(btn) {
@@ -369,10 +366,13 @@
         badge.className = 'status-badge px-3 py-1 bg-error text-on-error text-[10px] font-bold uppercase tracking-widest rounded-full';
         card.querySelector('.action-buttons').innerHTML = `
             <span class="text-error font-bold text-xs flex items-center gap-1">
-                <span class="material-symbols-outlined text-sm">report_problem</span> -฿${fee} Deducted
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i> -฿${fee} Deducted
             </span>
         `;
+        lucide.createIcons();
     }
 </script>
-</body></html>
+<script>
+    lucide.createIcons();
+</script>
 </body></html>
