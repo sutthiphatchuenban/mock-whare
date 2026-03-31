@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Whare Dress Rental System - Directory</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -36,29 +40,30 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
+
         .hero-clean {
             background-color: var(--surface);
             border-bottom: 1px solid rgba(124, 85, 73, 0.1);
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(124, 85, 73, 0.1);
         }
+
         .category-card:hover .icon-box {
             transform: scale(1.1) rotate(5deg);
         }
     </style>
 </head>
+
 <body class="bg-surface font-body text-on-surface min-h-screen">
 
     <!-- Hero Section -->
-    <header class="py-20 px-6 relative overflow-hidden border-b border-outline-variant/10">
+    <header class="py-12 px-6 relative overflow-hidden border-b border-outline-variant/10">
         <div class="max-w-7xl mx-auto relative z-10 text-center">
-            <img src="logo.png" alt="Whare Logo" class="w-32 h-32 mx-auto mb-8 drop-shadow-sm">
-            <div class="inline-block bg-primary/5 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                ระบบเช่าชุด Whare
-            </div>
+            <img src="logo.png" alt="Whare Logo" class="w-64 h-64 mx-auto -mb-6 drop-shadow-sm">
             <h1 class="font-headline text-5xl md:text-6xl font-bold mb-4 tracking-tight italic text-primary">
                 Whare Dress Rental
             </h1>
@@ -69,7 +74,7 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-6 py-12 -mt-10 relative z-20">
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <!-- Summary Stats -->
             <div class="glass-card p-6 rounded-[2rem] shadow-xl flex items-center gap-4">
@@ -112,66 +117,88 @@
 
         <!-- Sections -->
         <div class="space-y-16">
-            
+
             <!-- ADMIN PORTAL -->
             <section id="admin">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="h-px flex-1 bg-gradient-to-r from-transparent to-outline-variant"></div>
                     <h2 class="font-headline text-3xl font-bold italic tracking-tight flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shield</span>
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">shield</span>
                         Admin Portal
                     </h2>
                     <div class="h-px flex-1 bg-gradient-to-l from-transparent to-outline-variant"></div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <a href="admin-login.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-login.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">login</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Admin Login</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Secure gateway for system administrators.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Secure gateway for system
+                            administrators.</p>
                     </a>
-                    <a href="admin-dashboard.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-dashboard.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">dashboard</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Main Dashboard</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Executive overview of system metrics and health.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Executive overview of system metrics
+                            and health.</p>
                     </a>
-                    <a href="admin-manage-users.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-manage-users.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">group</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">User Management</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Manage member accounts and permissions.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Manage member accounts and
+                            permissions.</p>
                     </a>
-                    <a href="admin-manage-shops.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-manage-shops.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">storefront</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Boutique Management</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Approve and monitor partner boutique performance.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Approve and monitor partner boutique
+                            performance.</p>
                     </a>
-                    <a href="admin-manage-promotions.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-manage-promotions.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">loyalty</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Global Promotions</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Configure system-wide marketing campaigns.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Configure system-wide marketing
+                            campaigns.</p>
                     </a>
-                    <a href="admin-manage-withdrawals.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-manage-withdrawals.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">account_balance</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Financial Requests</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Audit and process boutique withdrawal requests.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Audit and process boutique withdrawal
+                            requests.</p>
                     </a>
-                    <a href="admin-refund-deposit.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="admin-refund-deposit.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">verified_user</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Deposit Refunds</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Manage security deposits and return claims.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Manage security deposits and return
+                            claims.</p>
                     </a>
                 </div>
             </section>
@@ -181,109 +208,151 @@
                 <div class="flex items-center gap-4 mb-8">
                     <div class="h-px flex-1 bg-gradient-to-r from-transparent to-outline-variant"></div>
                     <h2 class="font-headline text-3xl font-bold italic tracking-tight flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">store</span>
+                        <span class="material-symbols-outlined text-secondary"
+                            style="font-variation-settings: 'FILL' 1;">store</span>
                         Partner Studio
                     </h2>
                     <div class="h-px flex-1 bg-gradient-to-l from-transparent to-outline-variant"></div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <a href="boutique-onboarding-step1.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-onboarding-step1.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">app_registration</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Onboarding</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Step-by-step partner registration process.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Step-by-step partner registration
+                            process.</p>
                     </a>
-                    <a href="boutique-dashboard.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-dashboard.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">dashboard</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Boutique Dashboard</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Daily operations overview for shop owners.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Daily operations overview for shop
+                            owners.</p>
                     </a>
-                    <a href="boutique-products.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-products.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">apparel</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Inventory Management</h4>
                         <p class="text-xs text-on-surface-variant leading-relaxed">Add and edit dress catalog items.</p>
                     </a>
-                    <a href="boutique-manage-orders.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-manage-orders.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">receipt_long</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Order Book</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Process incoming rental orders and logistics.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Process incoming rental orders and
+                            logistics.</p>
                     </a>
-                    <a href="boutique-shipping-delivery.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-shipping-delivery.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">local_shipping</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Express Delivery</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Track shipments and delivery status.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Track shipments and delivery status.
+                        </p>
                     </a>
-                    <a href="boutique-manage-returns.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-manage-returns.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">keyboard_return</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Return Hub</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Handle return processing and quality checks.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Handle return processing and quality
+                            checks.</p>
                     </a>
-                    <a href="boutique-wallet.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-wallet.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">account_balance_wallet</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Boutique Wallet</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Financial summary and withdrawal history.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Financial summary and withdrawal
+                            history.</p>
                     </a>
-                    <a href="boutique-sales-insights.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-sales-insights.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">insights</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Sales Analytics</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Data-driven insights into boutique performance.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Data-driven insights into boutique
+                            performance.</p>
                     </a>
-                    <a href="boutique-promotions.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-promotions.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">sell</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Promo Studio</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Create shop-specific discounts and deals.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Create shop-specific discounts and
+                            deals.</p>
                     </a>
-                    <a href="boutique-customer-inquiries.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-customer-inquiries.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">forum</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Inquiry Center</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">List of all active customer conversations.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">List of all active customer
+                            conversations.</p>
                     </a>
-                    <a href="boutique-chat-detail.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-chat-detail.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">chat</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Chat Interface</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Deep-dive chat view for customer support.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Deep-dive chat view for customer
+                            support.</p>
                     </a>
-                    <a href="boutique-customer-reviews.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-customer-reviews.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">stars</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Reviews Dashboard</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Monitor feedback and engage with customers.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Monitor feedback and engage with
+                            customers.</p>
                     </a>
-                    <a href="boutique-notifications.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-notifications.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">notifications</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Partner Alerts</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Stay updated with system and order alerts.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Stay updated with system and order
+                            alerts.</p>
                     </a>
-                    <a href="boutique-profile-settings.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
+                    <a href="boutique-profile-settings.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-secondary hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-secondary/5 flex items-center justify-center text-secondary mb-4 transition-transform">
                             <span class="material-symbols-outlined">settings_suggest</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-secondary">Boutique Profile</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Customizing your shop's digital identity.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Customizing your shop's digital
+                            identity.</p>
                     </a>
                 </div>
             </section>
@@ -293,151 +362,207 @@
                 <div class="flex items-center gap-4 mb-8">
                     <div class="h-px flex-1 bg-gradient-to-r from-transparent to-outline-variant"></div>
                     <h2 class="font-headline text-3xl font-bold italic tracking-tight flex items-center gap-3">
-                        <span class="material-symbols-outlined text-stone-900" style="font-variation-settings: 'FILL' 1;">person_pin</span>
+                        <span class="material-symbols-outlined text-stone-900"
+                            style="font-variation-settings: 'FILL' 1;">person_pin</span>
                         Member Experience
                     </h2>
                     <div class="h-px flex-1 bg-gradient-to-l from-transparent to-outline-variant"></div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <a href="member-registration.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="member-registration.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">person_add</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Sign Up</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Elegant registration flow for new members.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Elegant registration flow for new
+                            members.</p>
                     </a>
-                    <a href="somsri-login.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-login.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">passkey</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Member Login</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Smooth authentication for existing users.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Smooth authentication for existing
+                            users.</p>
                     </a>
-                    <a href="somsri-home.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-home.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">home</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Discovery Home</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Visual gallery and personalized feed.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Visual gallery and personalized feed.
+                        </p>
                     </a>
-                    <a href="somsri-categories.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-categories.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">grid_view</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Explore Categories</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Thematic collections and dress browsing.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Thematic collections and dress
+                            browsing.</p>
                     </a>
-                    <a href="somsri-exclusive-offers.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-exclusive-offers.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">celebration</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">VIP Offers</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">High-end deals and member-only specials.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">High-end deals and member-only
+                            specials.</p>
                     </a>
-                    <a href="somsri-cart.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-cart.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">shopping_bag</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Shopping Bag</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Review selected items before checkout.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Review selected items before
+                            checkout.</p>
                     </a>
-                    <a href="somsri-payment.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-payment.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">payments</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Secure Checkout</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Payment gateways and order confirmation.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Payment gateways and order
+                            confirmation.</p>
                     </a>
-                    <a href="somsri-orders.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-orders.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">receipt_long</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Order Logs</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">History of all dress rentals and receipts.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">History of all dress rentals and
+                            receipts.</p>
                     </a>
-                    <a href="somsri-my-rentals.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-my-rentals.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">autorenew</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Active Rentals</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Track your current rentals and delivery status.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Track your current rentals and
+                            delivery status.</p>
                     </a>
-                    <a href="somsri-return-item.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-return-item.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">assignment_return</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Return Portal</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Request and schedule item returns.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Request and schedule item returns.
+                        </p>
                     </a>
-                    <a href="somsri-deposit.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-deposit.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">shield_moon</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Insurance & Deposit</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Manage security funds and protection plans.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Manage security funds and protection
+                            plans.</p>
                     </a>
-                    <a href="somsri-add-credit.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-add-credit.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">wallet</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Credits Top-up</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Add funds to your digital whare wallet.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Add funds to your digital whare
+                            wallet.</p>
                     </a>
-                    <a href="somsri-bank-info.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-bank-info.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">account_balance</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Settlement Info</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Securely manage your payout bank details.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Securely manage your payout bank
+                            details.</p>
                     </a>
-                    <a href="somsri-points-rewards.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-points-rewards.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">diamond</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Points & Loyalty</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">View rewards and redeem whare points.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">View rewards and redeem whare points.
+                        </p>
                     </a>
-                    <a href="somsri-chat.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-chat.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">support_agent</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Help Desk</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Contact boutiques or system support.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Contact boutiques or system support.
+                        </p>
                     </a>
-                    <a href="somsri-notifications.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-notifications.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">notifications_active</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Inbox</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Personalized alerts and booking updates.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Personalized alerts and booking
+                            updates.</p>
                     </a>
-                    <a href="somsri-profile.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
-                        <div class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
+                    <a href="somsri-profile.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-stone-900 hover:shadow-2xl transition-all group">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-stone-900/5 flex items-center justify-center text-stone-900 mb-4 transition-transform">
                             <span class="material-symbols-outlined">account_circle</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-stone-900">Member Profile</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">Privacy settings and personal details.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">Privacy settings and personal
+                            details.</p>
                     </a>
                 </div>
             </section>
 
-             <!-- GENERAL -->
-             <section id="general">
+            <!-- GENERAL -->
+            <section id="general">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="h-px flex-1 bg-gradient-to-r from-transparent to-outline-variant"></div>
                     <h2 class="font-headline text-3xl font-bold italic tracking-tight flex items-center gap-3">
-                        <span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        <span class="material-symbols-outlined text-outline"
+                            style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
                         Public Showcase
                     </h2>
                     <div class="h-px flex-1 bg-gradient-to-l from-transparent to-outline-variant"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <a href="whare-dress-rental.html" class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group md:col-span-2">
-                        <div class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
+                    <a href="whare-dress-rental.html"
+                        class="category-card bg-white p-5 rounded-2xl border border-outline-variant/30 hover:border-primary hover:shadow-2xl transition-all group md:col-span-2">
+                        <div
+                            class="icon-box size-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-4 transition-transform">
                             <span class="material-symbols-outlined">star</span>
                         </div>
                         <h4 class="font-bold text-lg mb-1 group-hover:text-primary">Featured Product Page</h4>
-                        <p class="text-xs text-on-surface-variant leading-relaxed">A high-end showcase of a specific dress rental listing with booking details.</p>
+                        <p class="text-xs text-on-surface-variant leading-relaxed">A high-end showcase of a specific
+                            dress rental listing with booking details.</p>
                     </a>
                 </div>
             </section>
@@ -447,10 +572,13 @@
 
     <footer class="bg-surface-container-low border-t border-outline-variant/20 py-12 px-6 mt-16">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="font-headline text-xl font-bold italic tracking-tight text-primary mb-2">Whare Dress Rental System</h3>
-            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-on-surface-variant">Design System by Whare • 2026</p>
+            <h3 class="font-headline text-xl font-bold italic tracking-tight text-primary mb-2">Whare Dress Rental
+                System</h3>
+            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-on-surface-variant">Design System by Whare
+                • 2026</p>
         </div>
     </footer>
 
 </body>
+
 </html>
